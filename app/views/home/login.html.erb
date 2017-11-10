@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="/assets/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/assets//bootstrap.min.css" type="text/css">
 
 <!-- Template Styles -->
 <link rel="stylesheet" href="/assets/style.css" type="text/css" />
@@ -30,6 +30,9 @@
 
 <!-- Animations -->
 <link href="/assets/animations.min.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- forms -->
+<link rel="stylesheet" href="/assets/sky-forms.css" type="text/css" media="all">
 </head>
 <body>
 <div class="site-wrapper" style="position: relative;">
@@ -40,8 +43,8 @@
           <div class="col-md-6 pull-left nodisplay">Call: +1 123 456 7890</div>
           <div class="col-md-6 pull-right text-right">
             <ul class="top-right-list">
-              <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
-              <li><a href="register.html"><i class="fa fa-user"></i> Register</a> | </li>
+              <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
+              <li><a href="/register"><i class="fa fa-user"></i> Register</a> | </li>
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -56,7 +59,7 @@
       <div class="container">
         <div class="mod-menu">
           <div class="row">
-            <div class="col-sm-2"> <a href="index.html" title="" class="logo"> <img src="/assets/logo.png" alt=""> </a> </div>
+            <div class="col-sm-2"> <a href="/" title="" class="logo"> <img src="/assets/logo.png" alt=""> </a> </div>
             <div class="col-sm-10">
               <div class="main-nav">
                 <ul class="nav navbar-nav top-nav">
@@ -73,24 +76,24 @@
                 </ul>
                 <div id="menu" class="collapse">
                   <ul class="nav navbar-nav">
-                    <li><a href="index">Home</a></li>
-                    <li class="active"><a href="about_us">About Us</a></li>
-                    <li><a href="courses.html">Courses</a> <span class="arrow"></span>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/courses">Courses</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
                         <li><a href="courses.html"><i class="fa fa-angle-right"></i> Grid View</a></li>
                         <li><a href="courses1.html"><i class="fa fa-angle-right"></i> List View</a></li>
                         <li><a href="courses2.html"><i class="fa fa-angle-right"></i> Single Course</a></li>
                       </ul>
                     </li>
-                    <li><a href="our-team.html">Our Team</a></li>
-                    <li><a href="blog.html">Blog</a> <span class="arrow"></span>
+                    <li><a href="/our_team">Our Team</a></li>
+                    <li><a href="/blog">Blog</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
                         <li><a href="blog.html"><i class="fa fa-angle-right"></i> Blog Standard</a></li>
                         <li><a href="blog1.html"><i class="fa fa-angle-right"></i> Blog 3 Columns</a></li>
                         <li><a href="blog2.html"><i class="fa fa-angle-right"></i> Blog Single Post</a></li>
                       </ul>
                     </li>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -103,14 +106,14 @@
     <!--end menu--> 
   </div>
   <div class="clearfix"></div>
-  <div class="page-header">
+  <div class="page-header four">
     <div class="container">
       <div class="col-md-6 pull-left">
-        <h3>About Us</h3>
-        <h4>A brief history about our company</h4>
+        <h3>Loing</h3>
+        <h4>User Login Here...!</h4>
       </div>
       <div class="col-md-6 pull-right">
-        <div class="breadcrumbs"><a href="index.html">Home</a> <i>/</i> About Us</div>
+        <div class="breadcrumbs"><a href="/">Home</a> <i>/</i> Loing</div>
       </div>
     </div>
   </div>
@@ -120,66 +123,74 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1 sec-heading text-center">
-          <p class="message-info">Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin sem iaculis. Mi iaculis ac eleifend id venenatis non erossed venenatis non eros sed rhoncus gravida. 
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="cource-box"><a href="#"><img class="img-responsive" src="/assets/project-3.jpg" alt=""></a>
-            <div class="cource-text">
-              <h4>Who We Are</h4>
-              <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitud.</p>
+          <div class="row">
+            <div class="login_form">
+              <form class="sky-form" id="sky-form" action="index.html" novalidate>
+                <header class="font-slim">Login form</header>
+                <fieldset>
+                  <div class="section">
+                    <div class="row">
+                      <label class="label col col-4">E-mail</label>
+                      <div class="col col-8">
+                        <label class="input"> <i class="icon-append fa fa-user"></i>
+                          <input type="email" name="email">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section">
+                    <div class="row">
+                      <label class="label col col-4">Password</label>
+                      <div class="col col-8">
+                        <label class="input"> <i class="icon-append fa fa-lock"></i>
+                          <input type="password" name="password">
+                        </label>
+                        <div class="note"><a class="modal-opener" href="#sky-form2">Forgot password?</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section">
+                    <div class="row">
+                      <div class="col col-4"></div>
+                      <div class="col col-8">
+                        <label class="checkbox">
+                          <input type="checkbox" checked="" name="remember">
+                          <i></i>Keep me logged in</label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <footer>
+                  <div class="fright"> <a class="button button-secondary" href="registration.html">Register</a>
+                    <button class="button" type="submit">Log in</button>
+                  </div>
+                </footer>
+              </form>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="cource-box"><a href="#"><img class="img-responsive" src="/assets/project-4.jpg" alt=""></a>
-            <div class="cource-text">
-              <h4>Our Mission</h4>
-              <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitud.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="cource-box"><a href="#"><img class="img-responsive" src="/assets/project-1.jpg" alt=""></a>
-            <div class="cource-text">
-              <h4>Our Vission</h4>
-              <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitud.</p>
-            </div>
+            <form class="sky-form sky-form-modal" id="sky-form2" action="demo-recovery.php" novalidate>
+              <header>Password recovery</header>
+              <fieldset>
+                <div class="section">
+                  <label class="label">E-mail</label>
+                  <label class="input"> <i class="icon-append icon-user"></i>
+                    <input type="email" id="email" name="email">
+                  </label>
+                </div>
+              </fieldset>
+              <footer>
+                <button class="button" name="submit" type="submit">Submit</button>
+                <a class="button button-secondary modal-closer" href="#">Close</a> </footer>
+              <div class="message"> <i class="icon-ok"></i>
+                <p>Your request successfully sent!<br>
+                  <a class="modal-closer" href="#">Close window</a></p>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
   <!--end counters-->
-  <div class="clearfix"></div>
-  <div class="section-lg m-bottom10">
-    <div class="container">
-      <div class="col-md-8 col-md-pull-1 animate-in" data-anim-type="fade-in-up" data-anim-delay="100"><img class="img-responsive" src="/assets/course-4.jpg" alt="course"></div>
-      <div class="col-md-4 animate-in" data-anim-type="fade-in-up" data-anim-delay="200">
-        <div class="m-top5">
-          <div class="fea-info">
-            <h4><i class="icon-lightbulb"></i> Learn Anything Online</h4>
-            <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli.</p>
-          </div>
-          <div class="fea-info">
-            <h4><i class="icon-trophy"></i> Communicate People</h4>
-            <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin sem iaculis.</p>
-          </div>
-          <div class="fea-info">
-            <h4><i class="icon-puzzle"></i> Share Your Knowledge</h4>
-            <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--end features-->
-  <div class="clearfix"></div>
-  <div class="section-lg">
-    <div class="container">
-      <div class="row"> <img class="img-responsive m-auto" src="/assets/studet-group.jpg" alt=""> </div>
-    </div>
-  </div>
-  <!--end image-->
   <div class="clearfix"></div>
   <div class="bg-parallax">
     <div class="overlay"></div>

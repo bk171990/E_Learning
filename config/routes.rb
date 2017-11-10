@@ -4,11 +4,15 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :home do 
+  resources :home, path: '/', only: :index do 
         collection do
-          get 'about_us'
-          get 'contact_us'
+          get 'about'
+          get 'contact'
           get 'courses'
+          get 'login'
+          get 'blog'
+          get 'register'
+          get 'our_team'
         end
       end
 end
