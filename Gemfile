@@ -30,6 +30,7 @@ gem "font-awesome-rails"
 
 # Using devise gem for create users
 gem 'devise'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
