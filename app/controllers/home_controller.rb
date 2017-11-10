@@ -1,8 +1,10 @@
 class HomeController < ApplicationController
+	
+
 	def index
 	end
 
-	def about_us
+	def about
 	end
 
 	def courses
@@ -14,6 +16,12 @@ class HomeController < ApplicationController
 	def blog
 	end
 
-	def contact_us
+	def contact
+	end
+
+	def login
+	end
+
+	def register
 	end
 end
