@@ -3,7 +3,7 @@ class CreateGeneralSettings < ActiveRecord::Migration[5.1]
     create_table :general_settings do |t|
       t.string :name
       t.string :email
-      t.integer :phone
+      t.string :phone
       
       t.timestamps
     end

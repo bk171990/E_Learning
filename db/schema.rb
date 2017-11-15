@@ -10,23 +10,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110041436) do
+ActiveRecord::Schema.define(version: 20171114045430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "general_settings", force: :cascade do |t|
+  create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "phone"
-    t.string "role"
+    t.string "phonenumber"
+    t.string "password"
+    t.string "confirm_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "general_settings", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "middlename"
+    t.string "lastname"
+    t.date "dob"
+    t.text "address"
+    t.text "landmark"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.integer "pincode"
+    t.string "referral_code"
+    t.string "course"
+    t.time "duration"
+    t.string "phone_number"
+    t.string "image"
+    t.string "coupon_code"
+    t.string "email"
+    t.string "password"
+    t.string "conf_password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "status", default: false
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "middlename"
+    t.string "lastname"
+    t.date "dob"
+    t.text "address"
+    t.text "landmark"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.integer "pincode"
+    t.string "referral_code"
+    t.string "course"
+    t.time "duration"
+    t.integer "phone_number"
+    t.string "image"
+    t.string "coupon_code"
+    t.string "conf_password"
+    t.boolean "status"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "phone_no"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -39,10 +92,13 @@ ActiveRecord::Schema.define(version: 20171110041436) do
     t.datetime "updated_at", null: false
     t.bigint "general_setting_id"
     t.string "role"
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "index_users_on_admin_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["general_setting_id"], name: "index_users_on_general_setting_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "users", "admins"
   add_foreign_key "users", "general_settings"
 end

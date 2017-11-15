@@ -24,4 +24,7 @@ class HomeController < ApplicationController
 
 	def register
 	end
+
+	def new
+	end
 end

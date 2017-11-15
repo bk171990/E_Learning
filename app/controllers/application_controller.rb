@@ -1,4 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-  protect_from_forgery with: :exception
+   protect_from_forgery with: :exception  
+
+
+
+   # Method used for set current user
+  def set_current_user
+    User.current = current_user
+  end
 end
