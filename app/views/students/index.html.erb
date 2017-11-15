@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Middlename</th>
+      <th>Lastname</th>
+      <th>Dob</th>
+      <th>Address</th>
+      <th>Landmark</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Pincode</th>
+      <th>Referral code</th>
+      <th>Course</th>
+      <th>Duration</th>
+      <th>Phone number</th>
+      <th>Image</th>
+      <th>Coupon code</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Conf password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.middlename %></td>
+        <td><%= student.lastname %></td>
+        <td><%= student.dob %></td>
+        <td><%= student.address %></td>
+        <td><%= student.landmark %></td>
+        <td><%= student.city %></td>
+        <td><%= student.state %></td>
+        <td><%= student.country %></td>
+        <td><%= student.pincode %></td>
+        <td><%= student.referral_code %></td>
+        <td><%= student.course %></td>
+        <td><%= student.duration %></td>
+        <td><%= student.phone_number %></td>
+        <td><%= student.image %></td>
+        <td><%= student.coupon_code %></td>
+        <td><%= student.email %></td>
+        <td><%= student.password %></td>
+        <td><%= student.conf_password %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>

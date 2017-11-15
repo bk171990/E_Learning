@@ -1,0 +1,113 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :student_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :middlename %>
+    <%= form.text_field :middlename, id: :student_middlename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :student_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.date_select :dob, id: :student_dob, "data-provide" => 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :student_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :landmark %>
+    <%= form.text_area :landmark, id: :student_landmark %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :student_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :student_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= text_field :country,:readonly => true%>
+  </div>
+
+  <div class="field">
+    <%= form.label :pincode %>
+    <%= form.text_field :pincode, id: :student_pincode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :referral_code %>
+    <div><%=text_field_tag(:message, params[:coupon])%>
+  </div>
+
+  <div class="field">
+    <%= form.label :course %>
+    <%= form.text_field :course, id: :student_course %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :duration %>
+    <%= form.time_select :duration, id: :student_duration %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :student_phone_number %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :student_image %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :coupon_code %>
+    <%= form.text_field :coupon_code, id: :student_coupon_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :student_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :student_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :conf_password %>
+    <%= form.text_field :conf_password, id: :student_conf_password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

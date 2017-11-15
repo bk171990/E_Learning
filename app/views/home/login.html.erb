@@ -43,12 +43,12 @@
           <div class="col-md-6 pull-left nodisplay">Call: +1 123 456 7890</div>
           <div class="col-md-6 pull-right text-right">
             <ul class="top-right-list">
-              <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
-              <li><a href="/register"><i class="fa fa-user"></i> Register</a> | </li>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li class="last"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="/users/sign_in"><i class="fa fa-lock"></i> Login</a></li>
+              <li><a href="/users/sign_up"><i class="fa fa-user"></i> Register</a> | </li>
+              <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://plus.google.com/discove"><i class="fa fa-google-plus"></i></a></li>
+              <li class="last"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>
@@ -76,24 +76,24 @@
                 </ul>
                 <div id="menu" class="collapse">
                   <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/courses">Courses</a> <span class="arrow"></span>
+                    <li><a href="/home/index">Home</a></li>
+                    <li><a href="/home/about">About Us</a></li>
+                    <li><a href="/home/courses">Courses</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
                         <li><a href="courses.html"><i class="fa fa-angle-right"></i> Grid View</a></li>
                         <li><a href="courses1.html"><i class="fa fa-angle-right"></i> List View</a></li>
                         <li><a href="courses2.html"><i class="fa fa-angle-right"></i> Single Course</a></li>
                       </ul>
                     </li>
-                    <li><a href="/our_team">Our Team</a></li>
-                    <li><a href="/blog">Blog</a> <span class="arrow"></span>
+                    <li><a href="/home/our_team">Our Team</a></li>
+                    <li><a href="/home/blog">Blog</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
                         <li><a href="blog.html"><i class="fa fa-angle-right"></i> Blog Standard</a></li>
                         <li><a href="blog1.html"><i class="fa fa-angle-right"></i> Blog 3 Columns</a></li>
                         <li><a href="blog2.html"><i class="fa fa-angle-right"></i> Blog Single Post</a></li>
                       </ul>
                     </li>
-                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/home/contact">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -113,7 +113,7 @@
         <h4>User Login Here...!</h4>
       </div>
       <div class="col-md-6 pull-right">
-        <div class="breadcrumbs"><a href="/">Home</a> <i>/</i> Loing</div>
+        <div class="breadcrumbs"><a href="/home/index">Home</a> <i>/</i> Loing</div>
       </div>
     </div>
   </div>
@@ -161,7 +161,7 @@
                   </div>
                 </fieldset>
                 <footer>
-                  <div class="fright"> <a class="button button-secondary" href="registration.html">Register</a>
+                  <div class="fright"> <a class="button button-secondary" href="/home/sign_up">Register</a>
                     <button class="button" type="submit">Log in</button>
                   </div>
                 </footer>
@@ -178,8 +178,8 @@
                 </div>
               </fieldset>
               <footer>
-                <button class="button" name="submit" type="submit">Submit</button>
-                <a class="button button-secondary modal-closer" href="#">Close</a> </footer>
+                <button class="action" name="submit" type="submit">Submit</button>
+                <a class="button button-secondary modal-closer" href="/">Close</a> </footer>
               <div class="message"> <i class="icon-ok"></i>
                 <p>Your request successfully sent!<br>
                   <a class="modal-closer" href="#">Close window</a></p>
