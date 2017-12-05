@@ -23,7 +23,7 @@
         <td><%= coupon.valid_from %></td>
         <%if coupon.discount.present?%>
         <% amt=(@course.fees.to_i*coupon.discount.to_i)/100 %>
-        <td><%@course1 = @course.fees.to_i - amt%></td>
+        <%@course1 = @course.fees.to_i - amt%>
         <td><%=@course1%></td>
 
         <td><%= coupon.status %></td>
