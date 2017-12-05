@@ -1,3 +1,9 @@
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Student Details</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,7 +11,7 @@
   <%= @student.name %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Middlename:</strong>
   <%= @student.middlename %>
 </p>
@@ -14,7 +20,7 @@
   <strong>Lastname:</strong>
   <%= @student.lastname %>
 </p>
-
+ -->
 <p>
   <strong>Dob:</strong>
   <%= @student.dob %>
@@ -39,11 +45,11 @@
   <strong>State:</strong>
   <%= @student.state %>
 </p>
-
+<!-- 
 <p>
   <strong>Country:</strong>
   <%= @student.country %>
-</p>
+</p> -->
 
 <p>
   <strong>Pincode:</strong>
@@ -52,10 +58,11 @@
 
 <p>
   <strong>Referral code:</strong>
-  <%= @student.referral_code %>
+  <%=@student.referral_code %>
+ 
 </p>
 
-<p>
+<!-- <p>
   <strong>Course:</strong>
   <%= @student.course %>
 </p>
@@ -63,14 +70,14 @@
 <p>
   <strong>Duration:</strong>
   <%= @student.duration %>
-</p>
+</p> -->
 
 <p>
   <strong>Phone number:</strong>
   <%= @student.phone_number %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Image:</strong>
   <%= @student.image %>
 </p>
@@ -78,7 +85,7 @@
 <p>
   <strong>Coupon code:</strong>
   <%= @student.coupon_code %>
-</p>
+</p> -->
 
 <p>
   <strong>Email:</strong>
@@ -90,10 +97,14 @@
   <%= @student.password %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Conf password:</strong>
   <%= @student.conf_password %>
-</p>
+</p> -->
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+
+<%= link_to 'Edit', edit_student_path(@student),class: 'btn btn-primary' %> |
+<%= link_to 'Back', students_path,class: 'btn btn-primary' %>
+</div>
+</div>
+</div>

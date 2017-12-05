@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coupon Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coupon</th>
+      <th>Course</th>
+      <th>Coupon course category</th>
+      <th>Status</th>
+      <th>fees</th>
+      <th>Discount</th>
+      <th>After Discont</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coupon_courses.each do |coupon_course| %>
+      <tr>
+        <td><%= coupon_course.coupon.coupon_name %></td>
+        <td><%= coupon_course.course.course_name %></td>
+        <td><%= coupon_course.coupon_course_category %></td>
+        <td><%= coupon_course.status %></td>
+        <td><%= coupon_course.course.fees %></td>
+        <td><%= coupon_course.coupon.discount %></td>
+        <td><%= ans = coupon_course.course.fees.to_i - coupon_course.course.fees.to_i * coupon_course.coupon.discount.to_i / 100 %></td>
+        <td><%= link_to 'Show', coupon_course %></td>
+        <td><%= link_to 'Edit', edit_coupon_course_path(coupon_course) %></td>
+        <td><%= link_to 'Destroy', coupon_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coupon Course', new_coupon_course_path %>

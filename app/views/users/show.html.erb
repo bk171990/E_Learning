@@ -1,0 +1,16 @@
+
+                    <%=link_to "Edit", edit_user_path(@user)%>
+                     <%=link_to "Change Password", change_password_user_path(@user)%>
+            
+  
+          <div class="form-group">
+          <div class="col-sm-4"><b> Role:</b></div>
+          <div class="col-sm-8"><%= @user.role %></div>
+          </div>
+          <br>
+              <div class="form-group">
+          <div class="col-sm-4"><b> Email:</b></div>
+          <div class="col-sm-8"><%= @user.email %></div>
+          </div>
+   
+

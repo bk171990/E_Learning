@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_name: MyString
+  course_description: MyString
+  course_validity: 2017-11-16
+  status: MyString
+  batch: MyString
+  admission_start_date: 2017-11-16
+  admission_end_date: 2017-11-16
+  coupon: one
+
+two:
+  course_name: MyString
+  course_description: MyString
+  course_validity: 2017-11-16
+  status: MyString
+  batch: MyString
+  admission_start_date: 2017-11-16
+  admission_end_date: 2017-11-16
+  coupon: two

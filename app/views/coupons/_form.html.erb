@@ -1,0 +1,48 @@
+<div class="widget-content nopadding">
+      <form action="#" method="get" class="form-horizontal">
+      <div class="control-group">
+        <%= form_with(model: [@course, @course.coupons.build ]) do |form| %>
+              <div class="control-group">
+              <label class="control-label">Coupon Name :</label>
+              <div class="controls">
+              <%= form.text_field :coupon_name %>
+              </div>
+              </div>
+              <div class="control-group">
+              <label class="control-label">Discount :</label>
+              <div class="controls">
+              <%= form.text_field :discount, id: :discount, placeholder: 'Enter Discount' %>
+              </div>
+              </div>
+              <div class="control-group">
+              <label class="control-label">Description :</label>
+              <div class="controls">
+              <%= form.text_field :coupon_description, id: :coupon_coupon_description, placeholder: 'Enter Description' %>
+              </div>
+              </div>
+              <div class="control-group">
+              <label class="control-label">Coupon Valid From:</label>
+              <div class="controls">
+              <%= form.date_select :valid_from, id: :valid_from, placeholder: 'Coupon Valid From' %>
+             </div>
+            </div>
+
+            <div class="control-group">
+            <label class="control-label">Status</label>
+            <div class="controls">
+            <%= form.radio_button :status, 'Active' %> Active<br />
+            <%= form.radio_button :status, 'Inactive' %>InActive<br />
+            </div>
+            </div>
+
+            <div class="form-actions">
+     <%= form.submit "Create Coupon" ,class: "btn btn-success"%>
+     <%= link_to 'Back', courses_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>
+</form>
+</div>
+
+
+

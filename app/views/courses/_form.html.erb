@@ -1,0 +1,100 @@
+ <div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>New Course</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+<%= form_with(model: course, local: true) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="control-group">
+              <label class="control-label">Course Name :</label>
+              <div class="controls">
+              <%= form.text_field :course_name, class: "span11",id: :course_course_name %>
+              </div>
+              </div>
+<!--          <input type="text" class="span11" placeholder="Enter Name" />
+ -->    
+            <div class="control-group">
+              <label class="control-label">Course Description :</label>
+              <div class="controls">
+              <%= form.text_field :course_description,class: "span11",id: :course_course_description %>
+              </div>
+              </div>
+       
+              <div class="control-group">
+              <label class="control-label">Course Validity :</label>
+              <div class="controls">
+              <%= form.date_select :course_validity,value: Date.today,class: "span11", id: :course_course_validity %>
+<!--          <input type="text" class="span11" placeholder="Description" />
+ -->              </div>
+            </div>
+
+              <div class="control-group">
+              <label class="control-label">Course Fees :</label>
+              <div class="controls">
+              <%= form.text_field :fees,class: "span11", id: :course_fees %>
+<!--          <input type="text" class="span11" placeholder="Description" />
+ -->              </div>
+            </div>
+
+              <div class="control-group">
+              <label class="control-label">Course Status :</label>
+              <div class="controls">
+              <p>
+              <%= form.radio_button :status, 'Active' %> Active <br />
+              <%= form.radio_button :status, 'Inactive' %> Inactive<br />
+                </p>
+<!--          <input type="text" class="span11" placeholder="Description" />
+ -->              </div>
+            </div>
+
+              <!-- <div class="field">
+              <%#= form.label :status %>
+              <%#= form.text_field :status, id: :course_status %>
+              </div> -->
+              <!-- <div class="control-group">
+              <label class="control-label">Course Batch :</label>
+              <div class="controls">
+              <%#= form.text_field :batch, id: :course_batch %>
+<!--          <input type="text" class="span11" placeholder="Description" />
+ -->             
+
+              <div class="control-group">
+              <label class="control-label">Admission Start Date :</label>
+              <div class="controls">
+              <%= form.date_select :admission_start_date,class: "span11", id: :course_admission_start_date %>
+<!--          <input type="text" class="span11" placeholder="Description" />
+ -->              </div>
+            </div>
+
+              <div class="control-group">
+              <label class="control-label">Admission End Date :</label>
+              <div class="controls">
+              <%= form.date_select :admission_end_date,class: "span11", id: :course_admission_end_date %>
+<!--          <input type="text" class="span11" placeholder="Description" />
+ -->              </div>
+            </div>
+
+
+
+  <div class="form-actions">
+     <%= form.submit "Create Course" ,class: "btn btn-success"%>
+  </div>
+<% end %>
+
+
+
+

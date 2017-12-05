@@ -25,9 +25,16 @@ class AdminsController < ApplicationController
   # POST /admins.json
   def create
     @admin = Admin.new(admin_params)
-
+    @ref2 = @admin.name[0..2]
     respond_to do |format|
+
       if @admin.save
+        if @admin.admin_referral_code.blank?
+        @ref = @ref2 += rand(0..10000).to_s
+        @admin.update(admin_referral_code: @ref)
+        end
+       @user = User.create!(firstname: @admin.name, role: 'Admin', email: @admin.email, password: @admin.password)
+       @user.update(admin_id: @admin.id)
         format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
         format.json { render :show, status: :created, location: @admin }
       else
@@ -69,6 +76,6 @@ class AdminsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:name, :email, :phonenumber, :password, :confirm_password)
+      params.require(:admin).permit(:name, :email, :phonenumber, :password, :confirm_password, :admin_referral_code)
     end
 end

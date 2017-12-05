@@ -1,0 +1,71 @@
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Course Details</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course name:</strong>
+  <%= @course.course_name %>
+</p>
+
+<p>
+  <strong>Course description:</strong>
+  <%= @course.course_description %>
+</p>
+
+<p>
+  <strong>Course validity:</strong>
+  <%= @course.course_validity %>
+</p>
+
+<p>
+  <strong>Course Fees</strong>
+  <%= @course.fees %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @course.status %>
+</p>
+
+<p>
+  <strong>Batch:</strong>
+  <%= @course.batch %>
+</p>
+
+<p>
+  <strong>Admission start date:</strong>
+  <%= @course.admission_start_date %>
+</p>
+
+<p>
+  <strong>Admission end date:</strong>
+  <%= @course.admission_end_date %>
+</p>
+</div>
+</div>
+</div>
+
+<div class="widget-box">
+  <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+    <h5>ADD COUPON</h5>
+      </div>
+      <div class="widget-content nopadding">
+      <form action="#" method="get" class="form-horizontal">
+      <div class="control-group">
+<%=render 'coupons/form'%> 
+<br>
+</div>
+</form>
+</div>
+</div>
+
+<h3>COUPON DETAILS</h3> 
+<%= render 'coupons/coupon'%>      
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,73 @@
+<h1>New Question</h1>
+
+<%= render 'form', question: @question %>
+
+<%= link_to 'Back', questions_path %>
+  <li><%=t :Question %></li>
+  </ul>
+</div>
+<h4><b><%=t :Note %></b>&nbsp;<font color="red">Fields Marked with * must be filled</font></h4>
+<div id="flash"><%= render 'layouts/messages'%></div>
+
+
+<%= form_for @question do |f| %>
+    <fieldset>
+    <% if @question.errors.any? %>
+        <div class="alert alert-danger">
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+              <li style="width:500px" align="left"><%= msg %></li>
+            <% end %>
+          </ul>
+      
+      </div>
+          <% end %>
+          
+      <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4">
+         <div class="form-group">
+        <b><%=t :Question_Type %></b>
+       <span style="color:red">*</span>
+         <%=f.select :question_type_id,QuestionType.all.collect{|b|[b.ques_type,b.id]},{prompt:true},{class: "form-control"}%>
+       </div>
+
+         <div class="form-group">
+        <b><%=t :Enter_Question %></b>
+       <span style="color:red">*</span>
+         <%=f.text_area :question,class: "form-control",:cols=>20,:rows=>5%>
+ 
+         <div class="form-group">
+        <b><%=t :No_of_Option %></b>
+       <span style="color:red">*</span>
+
+         <div id="p"> <%=f.select :no_of_option, [["2"], ["3"],["4"],["5"],["6"]],{prompt:true},{onchange:"var a={id: $(this).val()}; $.get('option',a,function(response){});",class: "form-control"}%>
+    </div><br/>
+    <div id="options"></div>
+        
+      
+</div>
+  <div class="col-sm-5 col-sm-offset-5"> 
+      <div class="form-actions">               
+        <%= f.submit 'Save', class: "btn btn-primary",style:"width:80px"%>
+      </div>
+    </div>
+  </fieldset>        
+ <% end %>
+</div>
+</div>
+</div>
+</div>
+
+<script language="Javascript" type="text/javascript">
+
+
+var counter = 1;
+var n = 3;
+
+alert(a);
+
+
+
+
+</script>

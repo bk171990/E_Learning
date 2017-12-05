@@ -44,7 +44,7 @@
           <div class="col-md-6 pull-right text-right">
             <ul class="top-right-list">
               <li><a href="/users/sign_in"><i class="fa fa-lock"></i> Login</a></li>
-              <li><a href="/usesrs/sign_up"><i class="fa fa-user"></i> Register</a> | </li>
+              <li><a href="/users/sign_up"><i class="fa fa-user"></i> Register</a> | </li>
               <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
               <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
               <li><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
@@ -134,15 +134,25 @@
                   <b class="tooltip tooltip-bottom-right">Needed to enter the website</b> </label>
               </div> -->
               <div class="section">
+                <label class="input"> 
+                  <%= f.text_field :firstname, autofocus: true, placeholder:"Full Name" %>
+                  <b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
+              </div>
+              <div class="section">
                 <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
                   <%= f.email_field :email, autofocus: true, placeholder:"Email address" %>
                   <b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
               </div>
               <div class="section">
+                <label class="input"> 
+                
+
+                  <%= f.text_field :phone_no, autofocus: true, placeholder:"Phone Number", id: :student_phone_no %>
+                  <b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
+              </div>
+              <div class="section">
                 <label class="input"> <i class="icon-append fa fa-lock"></i>
-                <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
+                
                 <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
                   <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
               </div>
@@ -152,28 +162,28 @@
                   <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
               </div>
             </fieldset>
-            <fieldset>
+            <!-- <fieldset>
               <div class="row">
                 <div class="section col col-6">
                   <label class="input">
-                  <%= f.text_field :firstname, :placeholder => 'Name', id: :student_firstname %>
+                  <%#= f.text_field :firstname, :placeholder => 'Name', id: :student_firstname %>
                   </label>
                 </div>
                 <div class="section col col-">
                   <label class="input">
-                  <%= f.text_field :middlename, :placeholder => 'Middle Name',id: :student_middlename %>
+                  <%#= f.text_field :middlename, :placeholder => 'Middle Name',id: :student_middlename %>
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="section col col-6">
                   <label class="input">
-                  <%= f.text_field :lastname, :placeholder => 'Last Name',id: :student_lastname %>
+                  <%#= f.text_field :lastname, :placeholder => 'Last Name',id: :student_lastname %>
                   </label>
                 </div>
                 <div class="section col col-">
                   <label class="input">
-                  <%= f.date_field :dob, :placeholder => 'DOB',class: 'form-control' %>
+                  <%#= f.date_field :dob, :placeholder => 'DOB',class: 'form-control' %>
                   </label>
                 </div>
               </div>
@@ -181,69 +191,34 @@
               <div class="row">
                 <div class="section col col-6">
                   <label class="input">
-                  <%= f.text_field :address, :placeholder => 'Address',id: :student_address %>
+                  <%#= f.text_field :address, :placeholder => 'Address',id: :student_address %>
                   </label>
                 </div>
                 <div class="section col col-">
                   <label class="input">
-                  <%= f.text_field :landmark, :placeholder => 'Landmark', id: :student_landmark%>
+                  <%#= f.text_field :landmark, :placeholder => 'Landmark', id: :student_landmark%>
                   </label>
                 </div>
-              </div>
+              </div> -->
 
-
-              <div class="row">
-                <div class="section col col-6">
-                  <label class="input">
-                  <%= f.text_field :city, :placeholder => 'City', id: :student_city %>
-                </label>
-                </div>
-                <div class="section col col-">
-                  <label class="input">
-                  <%= f.text_field :state, :placeholder => 'State', id: :student_state%>
-                 </label>
-                </div>
-              </div>
-
-
-              <div class="row">
-                <div class="section col col-6">
-                  <label class="input">
-                  
-                   <%=country_select("center", "country", { priority_countries: ["IN", "FR"], selected: "IN" }, { class: 'form-control', data: { attribute: "value" } })%>
-                  </label>
-                </div>
-                <div class="section col col-">
-                  <label class="input">
-                  <%=f.text_field :pincode, :placeholder => 'Pincode', id: :student_pincode%>
-                </label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="section col col-6">
-                  <label class="input">
-                  <%=f.text_field :phone_no, :placeholder => 'Phone Number', id: :student_phone_no %>
-                </label>
-                </div>
-                
               <div class="section">
-                
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password" %>
+                  <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+              </div>
+
+              <div class="section">
+              <label class="input">
+              <form action="#" method="get" class="form-horizontal">
+                <div class="control-group">
+                  <div class="controls">
+                  <%= f.text_field :referral_code, class: "span11",autofocus: true, placeholder:"Referral Code" %>
+                  </div>
                 </div>
-            </fieldset>
               
-              <div class="form_row">
-                <label for="theme">Gender</label>
-                    <% [ 'Male', 'Female' ].each do |theme| %>
-                    <br><%= radio_button_tag 'theme', theme, @theme == theme %>
-                    <%= theme.humanize %>
-                  <% end %>
-              <div class="section">
-                  <label class="checkbox">
-                  <input type="checkbox" id="terms" name="terms">
-                  <i></i>I agree with the<a class="modal-opener" href="#sky-form2"> Terms and Conditions</a></label>
-              </div>
-            </fieldset>
+                
+                </div>
+            
             <footer>
               <!--button class="btn button" type="submit">Submit</button-->
                <%= f.submit "Submit", class: "btn button" %>
@@ -259,7 +234,6 @@
                 <input type="email" id="email" name="email">
               </label>
             </div>
-          </fieldset>
           <footer>
             <button class="button eight" name="submit" type="submit">Submit</button>
             <a class="button button-secondary modal-closer" href="#">Close</a> </footer>

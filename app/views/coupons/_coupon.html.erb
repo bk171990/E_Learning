@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+   <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+      <th>Coupon name</th>
+      <th>Discount</th>
+      <th>Coupon description</th>
+      <th>Valid from</th>
+      <th>Discount Amt of course</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%amt=0%>
+    <% @course.coupons.each do |coupon| %>
+  <tr>
+
+        <td><%= coupon.coupon_name %></td>
+        <td><%= coupon.discount %></td>
+        <td><%= coupon.coupon_description %></td>
+        <td><%= coupon.valid_from %></td>
+        <%if coupon.discount.present?%>
+        <% amt=(@course.fees.to_i*coupon.discount.to_i)/100 %>
+        <td><%@course = @course.fees.to_i - amt%></td>
+        <td><%=@course%></td>
+
+        <td><%= coupon.status %></td>
+         <td><%= link_to 'Show', coupon %></td>
+         <td><%= link_to 'Delete', coupon, methode: :delete, data: { confirm: 'Are you sure ?'} %>
+      </tr>
+       <%end%>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</tr>
+</tbody>
+</table>
+
+    

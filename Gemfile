@@ -30,10 +30,12 @@ gem "font-awesome-rails"
 
 # Using devise gem for create users
 gem 'devise'
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'bootstrap-datepicker-rails'
 gem 'chosen-rails'
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
+gem "select2-rails"
+gem "nested_form"
+gem 'jquery-ui-rails', '5.0.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

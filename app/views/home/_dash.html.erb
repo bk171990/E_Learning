@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/assets/adminbootstrap.min.css" />
+<link rel="stylesheet" href="/assets/adminbootstrap-responsive.min.css" />
+<link rel="stylesheet" href="/assets/adminstyle.css" />
+<link rel="stylesheet" href="/assets/adminmedia.css" />
+<link href="/assets/adminfont-awesome.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/adminjquery.gritter.css" />
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+      <%if current_user.role == 'SuperAdmin'%>
+        <li><a href="/users/1"><i class="icon-user"></i> My Profile</a></li>
+        <% else %>
+        <li><a href="/"><i class="icon-user"></i>My Profile</a></li>
+        <%end%>
+        <li class="divider"></li>
+        <li><a href="/users/sign_out"><i class="icon-key"></i> Log Out</a></li>
+      </ul>
+    </li>
+    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+    <li class=""><a title="" href="/users/sign_out"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+  </ul>
+</div>
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+<div id="search">
+  <input type="text" placeholder="Search here..."/>
+  <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+</div>
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul>
+    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+           <%if current_user.role == 'Student'%>
+            <li><a href="/courses/student_courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
+           <%end%>
+
+      <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin' %>      <li><a href="/courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
+      <%end%>
+      <%#if current_user.role == 'SuperAdmin'%>
+<!--           <li><a href="/coupons"><i class="icon icon-book"></i> <span>Coupons</span></a></li>
+ -->      <%#end%>
+
+      <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin'%>
+        <li><a href="/students"><i class="icon-user-md"></i> <span>Admission</span></a></li>
+      <%end%>
+
+      <!-- <li><a href="#"><i class="icon icon-paper-clip"></i> <span>Reports</span></a></li> -->
+        <%if current_user.role == 'SuperAdmin'%>
+          <li><a href="/admins"><i class="icon icon-user"></i> <span>Admin Users</span></a></li>
+        <%end%>
+   
+    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Menu Item Expand</span></a>
+      <ul>
+        <li><a href="#">Sub Menu 1</a></li>
+           <li><a href="#">Sub Menu 2</a></li>
+              <li><a href="#">Sub Menu 3</a></li>
+      </ul>
+    </li>
+    <!-- 
+    
+    <li><a href="basic-form.html"><i class="icon icon-th-list"></i> <span>Form Styles</span> </a>
+      
+    </li>
+    
+     <li><a href="#"><i class="icon icon-pencil"></i> <span>Online Exam</span></a></li>
+    
+    <li><a href="Typography.html"><i class="icon icon-text-width"></i> <span>Typography</span></a></li>
+    </ul> -->
+</div>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+  </div>
+<!--End-breadcrumbs-->
+
+ 
+
+<!--Content-box-->    
+    <!-- <div class="row-fluid">
+      <div class="widget-box">
+        <div class="widget-title bg_lg">
+          <h5>Site Analytics</h5>
+        </div>
+        <div class="widget-content" >
+          <div class="row-fluid">
+            <div class="span12">
+            Place content here 
+            (Use spa1, span2, span3.....span 12 classes just like bootstrap columns. You can also use bootstrap classes for column purpose. 
+            You can add DIV here to fetch AJAX Data from RubyonRails.
+            )
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div> -->
+<!--End-Content-box--> 
+    <!-- <hr/>
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2">
+            <span class="icon"><i class="icon-arrow-down"></i></span> <h5>Collapsable Content</h5>
+          </div>
+          <div class="widget-content nopadding collapse in" id="collapseG2">
+            <ul class="recent-posts">
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/thumb.jpg"> </div>
+                <div class="article-post"> <span class="user-info"> Dummy Post</span>
+                  <p><a href="#">Dummy description here.</a> </p>
+                </div>
+              </li>
+              
+               <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/thumb.jpg"> </div>
+                <div class="article-post"> <span class="user-info"> Dummy Post</span>
+                  <p><a href="#">Dummy description here.</a> </p>
+                </div>
+              </li>
+             
+              <li>
+                <button class="btn btn-warning btn-mini">View All</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
+            <h5>Progress Box</h5>
+          </div>
+          <div class="widget-content">
+            <ul class="unstyled">
+              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> Progress Bar 1 <span class="pull-right strong">567</span>
+                <div class="progress progress-striped ">
+                  <div style="width: 81%;" class="bar"></div>
+                </div>
+              </li>
+              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> Progress Bar 2 <span class="pull-right strong">507</span>
+                <div class="progress progress-success progress-striped ">
+                  <div style="width: 72%;" class="bar"></div>
+                </div>
+              </li>
+              <li> <span class="icon24 icomoon-icon-arrow-down-2 red"></span> Progress Bar 3 <span class="pull-right strong">457</span>
+                <div class="progress progress-warning progress-striped ">
+                  <div style="width: 53%;" class="bar"></div>
+                </div>
+              </li>
+              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> Progress Bar 4 <span class="pull-right strong">8</span>
+                <div class="progress progress-danger progress-striped ">
+                  <div style="width: 3%;" class="bar"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Placeholder</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+          </div>
+          
+          
+          
+          <div class="widget-box">
+          <div class="widget-title">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
+              <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
+              <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
+            </ul>
+          </div>
+          
+          <div class="widget-content tab-content">
+            <div id="tab1" class="tab-pane active">
+              <p>Tab content 1</p>
+              </div>
+            <div id="tab2" class="tab-pane">
+              <p>Tab content 2</p>
+            </div>
+            <div id="tab3" class="tab-pane">
+             <p>Tab content 3</p>
+             </div>
+          </div>
+        </div>
+          
+          
+          
+        </div>
+        
+        <div class="accordion" id="collapse-group">
+          <div class="accordion-group widget-box">
+            <div class="accordion-heading">
+              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
+                <h5>Accordion Example 1</h5>
+                </a> </div>
+            </div>
+            <div class="collapse in accordion-body" id="collapseGOne">
+              <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
+            </div>
+          </div>
+          <div class="accordion-group widget-box">
+            <div class="accordion-heading">
+              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
+                <h5>Accordion Example 2</h5>
+                </a> </div>
+            </div>
+            <div class="collapse accordion-body" id="collapseGTwo">
+              <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
+            </div>
+          </div>
+          <div class="accordion-group widget-box">
+            <div class="accordion-heading">
+              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
+                <h5>Accordion Example 3</h5>
+                </a> </div>
+            </div>
+            <div class="collapse accordion-body" id="collapseGThree">
+              <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<!--  -->
+
+<!--end-Footer-part-->
+
+<script src="/assets/excanvas.min.js"></script> 
+<script src="/assets/jquery.min.js"></script> 
+<script src="/assets/jquery.ui.custom.js"></script> 
+<script src="/assets/bootstrap.min.js"></script> 
+<script src="/assets/jquery.flot.min.js"></script> 
+<script src="/assets/jquery.flot.resize.min.js"></script> 
+<script src="/assets/jquery.peity.min.js"></script> 
+<script src="/assets/main.js"></script> <!-- <script src="/assets/dashboard.js"></script>  -->
+<script src="/assets/jquery.gritter.min.js"></script> 
+<script src="/assets/interface.js"></script> 
+<script src="/assets/jquery.validate.js"></script> 
+<!-- <script src="/assets/form_validation.js"></script> 
+ --><script src="/assets/jquery.wizard.js"></script> 
+<script src="/assets/jquery.uniform.js"></script> 
+<script src="/assets/select2.min.js"></script> 
+<!-- <script src="/assets/dataTables.min.js"></script> 
+ --><script src="/assets/tables.js"></script> 
+
+<script type="/assets/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
+</body>
+</html>

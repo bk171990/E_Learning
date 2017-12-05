@@ -1,0 +1,45 @@
+<%= form_with(model: coupon_course, local: true) do |form| %>
+  <% if coupon_course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coupon_course.errors.count, "error") %> prohibited this coupon_course from being saved:</h2>
+
+      <ul>
+      <% coupon_course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coupon_id %>
+<!--     <%#= form.text_field :coupon_id, id: :coupon_course_coupon_id %>
+ -->    <%= form.select :coupon_id, Coupon.all.collect{|c| [c.coupon_name, c.id]},{prompt:true}%>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+<!--     <%#= form.text_field :course_id, id: :coupon_course_course_id %>
+ -->    <%= form.select :course_id, Course.all.collect{|s| [s.course_name, s.id]},{prompt:true}%>
+  </div>
+
+  <div class="field">
+    <%= form.label :coupon_course_category %>
+    <%= form.text_field :coupon_course_category, id: :coupon_course_coupon_course_category %>
+  </div>
+
+  <div class="field">
+   
+    <p>
+    <b>Status</b><br />
+    <%= form.radio_button :status, 'true' %> True<br />
+    <%= form.radio_button :status, 'false' %> False<br />
+   
+</p>
+    <!-- <!%= form.text_field :status, id: :coupon_status %> -->
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

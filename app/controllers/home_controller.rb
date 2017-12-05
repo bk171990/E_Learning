@@ -4,6 +4,14 @@ class HomeController < ApplicationController
 	def index
 	end
 
+	def dashboard
+    # if User.current.role == 'Student'
+    #   render 'home/dash'
+    # else
+    #    home_index_path
+    # end
+	end
+
 	def about
 	end
 

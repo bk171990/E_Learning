@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coupon: one
+  course: one
+  coupon_course_category: MyString
+  status: MyString
+
+two:
+  coupon: two
+  course: two
+  coupon_course_category: MyString
+  status: MyString
