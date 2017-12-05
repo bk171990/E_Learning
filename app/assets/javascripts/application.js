@@ -15,6 +15,5 @@
 //= require jquery
 //= require bootstrap
 //= require turbolinks
-//= require moment
 //= require jquery-ui
 //= require jquery-ui/widgets/datepicker
