@@ -11,7 +11,6 @@
  * It is generally better to create a new file per style scope.
  *@import "chosen";
  *= require_self
- *= require bootstrap
  *= require jquery-ui
  *= require_tree .
 

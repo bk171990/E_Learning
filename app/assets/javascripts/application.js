@@ -13,6 +13,5 @@
 //= require select2
 //= require select2.full
 //= require jquery
-//= require bootstrap
 //= require turbolinks
 //= require jquery-ui
