@@ -1,14 +1,38 @@
 Rails.application.routes.draw do
+  resources :questions do
+   member do
+    get :option
+   end
+  end
+
+  resources :question_types
+  resources :coupon_courses
+  resources :courses do
+
+    collection do
+      get :student_courses
+    end
+  end
+  resources :courses do
+    resources :coupons
+  end
+  resources :coupons
   resources :students
   resources :admins
   devise_for :users, controllers: { registrations: 'registrations' }
+  as :user do
+        get '/users/sign_out' => 'devise/sessions#destroy'
+        get 'sign_in' => 'devise/sessions#new'
+
+      end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
     devise_for :admins, :skip => :sessions
-  root 'home#index'
+  root 'home#dashboard'
 
   resources :home do
         collection do
+          get :dashboard
           get 'about'
           get 'index'
           get 'contact'
@@ -19,4 +43,15 @@ Rails.application.routes.draw do
           get 'our_team'
         end
       end
+
+
+        resources :users do
+     member do
+      get :change_password
+      patch :update_password
+    end
+  end
+
+      
+        
 end

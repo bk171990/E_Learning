@@ -1,4 +1,9 @@
-
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Admin Details</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
 
 <p id="notice"><%= notice %></p>
 
@@ -27,5 +32,11 @@
   <%= @admin.confirm_password %>
 </p>
 
+<p>
+  <strong>Referral Code:</strong>
+  <%= @admin.admin_referral_code %>
+</p>
+</div>
+</div>
 <%= link_to 'Edit', edit_admin_path(@admin) %> |
 <%= link_to 'Back', admins_path %>

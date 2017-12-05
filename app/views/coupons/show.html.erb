@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coupon name:</strong>
+  <%= @coupon.coupon_name %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @coupon.discount %>
+</p>
+
+<p>
+  <strong>Coupon description:</strong>
+  <%= @coupon.coupon_description %>
+</p>
+
+<p>
+  <strong>Coupon discount code:</strong>
+  <%= @coupon.coupon_discount_code %>
+</p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @coupon.valid_from %>
+</p>
+
+<p>
+  <strong>Valid until:</strong>
+  <%= @coupon.valid_until %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @coupon.status %>
+</p>
+
+<%= link_to 'Edit', edit_coupon_path(@coupon), class: "btn btn-denger" %> |
+<%= link_to 'Back', coupons_path,  class: "btn btn-primary" %>

@@ -1,8 +1,8 @@
 class Student < ApplicationRecord
-	 after_save :create_user_account
 
 
-	def create_user_account
-  	@user = User.create!(email: self.email, password: self.password)
-  end
+ #  	def self.set_referral_code
+ #     self.name[0..2] += rand(0..10000).to_s
+
+ # end
 end

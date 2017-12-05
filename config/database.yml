@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: Elearning_production
-  username: Elearning
+  username: postgres
   password: <%= ENV['ELEARNING_DATABASE_PASSWORD'] %>

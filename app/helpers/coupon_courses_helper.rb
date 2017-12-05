@@ -1,0 +1,2 @@
+module CouponCoursesHelper
+end

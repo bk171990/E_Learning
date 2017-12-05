@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114045430) do
+ActiveRecord::Schema.define(version: 20171201104117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,74 @@ ActiveRecord::Schema.define(version: 20171114045430) do
     t.string "confirm_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "admin_referral_code"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_comments_on_course_id"
+  end
+
+  create_table "coupon_courses", force: :cascade do |t|
+    t.bigint "coupon_id"
+    t.bigint "course_id"
+    t.string "coupon_course_category"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coupon_id"], name: "index_coupon_courses_on_coupon_id"
+    t.index ["course_id"], name: "index_coupon_courses_on_course_id"
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.string "coupon_name"
+    t.integer "discount"
+    t.string "coupon_description"
+    t.string "coupon_discount_code"
+    t.date "valid_from"
+    t.date "valid_until"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_coupons_on_course_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "course_name"
+    t.string "course_description"
+    t.date "course_validity"
+    t.string "status"
+    t.string "batch"
+    t.date "admission_start_date"
+    t.date "admission_end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "fees"
   end
 
   create_table "general_settings", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "question_types", force: :cascade do |t|
+    t.string "ques_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.integer "no_of_option"
+    t.integer "question_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,10 +118,11 @@ ActiveRecord::Schema.define(version: 20171114045430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "status", default: false
+    t.string "stud_no"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "firstname"
     t.string "middlename"
     t.string "lastname"
     t.date "dob"
@@ -93,12 +156,17 @@ ActiveRecord::Schema.define(version: 20171114045430) do
     t.bigint "general_setting_id"
     t.string "role"
     t.bigint "admin_id"
+    t.integer "student_id"
     t.index ["admin_id"], name: "index_users_on_admin_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["general_setting_id"], name: "index_users_on_general_setting_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "courses"
+  add_foreign_key "coupon_courses", "coupons"
+  add_foreign_key "coupon_courses", "courses"
+  add_foreign_key "coupons", "courses"
   add_foreign_key "users", "admins"
   add_foreign_key "users", "general_settings"
 end
