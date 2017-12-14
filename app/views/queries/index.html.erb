@@ -1,0 +1,30 @@
+
+<p id="notice"><%= notice %></p>
+<h1>Queries</h1>
+<div class="container-fluid">
+  <hr>
+  <%if current_user.role == 'Student'%>
+<%=link_to 'Add New Query', new_query_path, class: "btn btn-danger" %>
+<%end%>
+<div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+    <th>Descriptions</th>
+     <th><%if current_user.role == 'Admin' || current_user.role == 'SuperAdmin'%>Student Name <%end%></th>
+     <th colspan="2"></th>
+  </tr>
+ 
+  <% @queries.each do |query| %>
+    <tr>
+      <td><%= query.description %></td>
+       <td><%= query.student.name if current_user.role == 'Admin' || current_user.role == 'SuperAdmin' %></td>
+
+      <td><%= link_to 'Show', query_path(query),class: 'btn btn-info' if current_user.role == 'Student' %></td>
+      <td><%= link_to 'Reply', query_path(query),class: 'btn btn-info' if current_user.role == 'Admin' || current_user.role == 'SuperAdmin'%></td>
+      <!-- <td><%#= link_to 'Destroy', query_path(query),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td> -->
+    </tr>
+  <% end %>
+</table>

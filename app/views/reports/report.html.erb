@@ -1,0 +1,28 @@
+
+ 
+  <%= form_for :payment, method: :get,remote:true,id: 'payment_payment' do |f|%>
+  <font color="red"><b>Select Inventory Type to See Inventory Reports *</b></font>
+ <%= f.select :payment,options_for_select(['Offline', 'Online', 'All']),{prompt:true}%>
+ 
+<%end%>
+<div id="stage">
+  <%#=render 'report'%>
+</div>
+ 
+
+
+<script type='text/javascript'>
+$('#payment_payment').on('change', function() {
+ 			var payment_payment;
+ 			Item = $('#payment_payment').val();
+  	$.ajax({
+   		url: '/reports/select',
+   		type: 'GET',
+   		dataType: 'script',
+   		data: {payment_payment: Item},
+   }).done(function(data) {
+    		$('#payment_payment').html(data); 
+   
+ });
+});
+</script>

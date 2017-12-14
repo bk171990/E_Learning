@@ -143,8 +143,9 @@
                 <div class="section col col-"> -->
                 
       <div class="form-actions">
-        <%= form.submit "Submit", class: "btn btn-success" %>
-        <%= form.submit "Create Student", class: "btn btn-primary"%>
+<!--         <%#= form.submit "Submit", class: "btn btn-success" %>
+ -->        <%= form.submit "Create Student", class: "btn btn-primary"%>
+            <%= link_to 'Back', students_path,class: 'btn btn-primary' %>
             </div>
         </form>
     <% end %>

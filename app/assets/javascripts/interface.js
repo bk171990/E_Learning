@@ -51,7 +51,7 @@ $(document).ready(function(){
 		text:	'Notification Message here',
 			sticky: false
 		});		
-	});*/
+	});
 	
 	
 });

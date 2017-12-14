@@ -1,0 +1,29 @@
+
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Asking Queries</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+       
+<%= form_with scope: :query, url: queries_path, local: true do |form| %>
+  <p>
+    <br>
+    <%= form.text_area :description %>
+  </p>
+ 
+ 
+  <p>
+    <%= form.submit "Submit", class: "btn button" %>
+  </p>
+<% end %>
+
+</div>
+</div>
+</div>
+<%= link_to 'Back', queries_path, class: "btn btn-success" %>
+
+</div>
+</div>

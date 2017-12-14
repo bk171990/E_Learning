@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  course: one
+  coupon: one
+  payment_status: false
+  payment_type: false
+
+two:
+  student: two
+  course: two
+  coupon: two
+  payment_status: false
+  payment_type: false

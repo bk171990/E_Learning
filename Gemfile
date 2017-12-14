@@ -36,6 +36,9 @@ gem 'country_select', require: 'country_select_without_sort_alphabetical'
 gem "select2-rails"
 gem "nested_form"
 gem 'jquery-ui-rails', '5.0.5'
+gem 'paperclip'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

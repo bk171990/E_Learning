@@ -1,0 +1,39 @@
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-money"></i> </span>
+            <h5>Admin Details</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+
+<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Student Name:</strong>
+	<%= current_user.firstname%>
+</p>
+<p>
+<strong>Address:</strong>
+<%= current_user.student.address%>
+</p>
+
+<p>
+<strong>Phone no:</strong>
+<%= current_user.student.phone_number%>
+</p>
+
+<p>
+  <strong>Remaning:</strong>
+  <%= @payment.remaining %>
+</p>
+
+<p>
+  <strong>To Pay:</strong>
+  <%= @payment.instalment %>
+</p>
+
+
+
+<td><%= link_to 'Download PDF ',show_payment_payment_path(@payment, format: 'pdf'),target: '_blank', class: "btn btn-sucess"%> </td>
+                                                                                                                                                                                                                                                                                                                          
+

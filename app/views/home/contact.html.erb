@@ -100,9 +100,10 @@ $_SESSION['captcha_id'] = $str;
                     <li><a href="/home/about">About Us</a></li>
                     <li><a href="/home/courses">Courses</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
-                        <li><a href="courses.html"><i class="fa fa-angle-right"></i> Grid View</a></li>
-                        <li><a href="courses1.html"><i class="fa fa-angle-right"></i> List View</a></li>
-                        <li><a href="courses2.html"><i class="fa fa-angle-right"></i> Single Course</a></li>
+                       <li><a href="/home/course1"><i class="fa fa-angle-right"></i>View Courses</a></li>
+                        <!-- <li><a href="courses.html"><i class="fa fa-angle-right"></i> Grid View</a></li> -->
+                       
+                        <!-- <li><a href="courses2.html"><i class="fa fa-angle-right"></i> Single Course</a></li> -->
                       </ul>
                     </li>
                     <li><a href="/home/our_team">Our Team</a></li>
@@ -164,37 +165,39 @@ $_SESSION['captcha_id'] = $str;
           <!-- end section --> 
         </div>
         <div class="col-md-8">
-          <form action="demo-contacts-process.php" method="post" id="sky-form" class="sky-form">
+          <div class="sky-form" id="sky-form">
+
+          <%= form_for :home, url: {action: 'create', controller: 'home'},method: 'post' do |f|%>
             <fieldset>
               <div class="row">
                 <section class="col col-6">
                   <label class="label">Name</label>
                   <label class="input"> <i class="icon-append fa fa-user"></i>
-                    <input type="text" name="name" id="name">
+                    <%=f.text_field :name, class: 'form-control'%>
                   </label>
                 </section>
                 <section class="col col-6">
                   <label class="label">E-mail</label>
                   <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
-                    <input type="email" name="email" id="email">
+                    <%=f.text_field :email, class:  'form-control'%>
                   </label>
                 </section>
               </div>
               <section>
                 <label class="label">Subject</label>
                 <label class="input"> <i class="icon-append fa fa-tag"></i>
-                  <input type="text" name="subject" id="subject">
+                  <%=f.text_field :subject, class: 'form-control'%>
                 </label>
               </section>
+
               <section>
                 <label class="label">Message</label>
                 <label class="textarea"> <i class="icon-append fa fa-comment"></i>
-                  <textarea rows="4" name="message" id="message"></textarea>
-                </label>
+                   <%=f.text_area :message, class: 'form-control'%>                </label>
               </section>
               <section>
                 <label class="label">Enter characters below:</label>
-                <label class="input input-captcha"> <img src="captcha/image.php?<?php echo time(); ?>" width="100" height="35" alt="Captcha image" />
+                <label class="input input-captcha"> <img src="/assets/image.php?<?php echo time(); ?>" width="100" height="35" alt="Captcha image" />
                   <input type="text" maxlength="6" name="captcha" id="captcha">
                 </label>
               </section>
@@ -205,12 +208,13 @@ $_SESSION['captcha_id'] = $str;
               </section>
             </fieldset>
             <footer>
-              <button type="submit" class="button">Send message</button>
+               <%= f.submit "Submit", class: "btn button" %>
             </footer>
             <div class="message"> <i class="fa fa-check"></i>
               <p>Your message was successfully sent!</p>
+              </div>
             </div>
-          </form>
+          <%end%>
         </div>
       </div>
     </div>
@@ -219,7 +223,7 @@ $_SESSION['captcha_id'] = $str;
   <div class="clearfix"></div>
   <div class="section-lg">
     <div class="container">
-      <div class="row"> <img class="img-responsive m-auto" src="/assets/studet-group.jpg" alt=""> </div>
+      <div class="row"> <img class="img-responsive m-auto" src="/assets/studet.jpg" alt=""> </div>
     </div>
   </div>
   <!--end image-->

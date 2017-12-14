@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
+  get 'enquiries/index'
+
+  get 'enquiries/create'
+
   resources :questions do
    member do
     get :option
    end
   end
 
+  resources :payments do
+    member do
+    get :show_payment
+  end
+end
+
+  resources :queries do
+    resources :answers
+  end
+  resources :enquiries
+  resources :answers
   resources :question_types
   resources :coupon_courses
   resources :courses do
@@ -13,6 +28,12 @@ Rails.application.routes.draw do
       get :student_courses
     end
   end
+  resources :reports do 
+    collection do
+      get :select, :report
+    end
+  end
+
   resources :courses do
     resources :coupons
   end
@@ -41,11 +62,13 @@ Rails.application.routes.draw do
           get 'blog'
           get 'register'
           get 'our_team'
+          get 'course1'
+          
         end
       end
 
 
-        resources :users do
+  resources :users do
      member do
       get :change_password
       patch :update_password
