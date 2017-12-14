@@ -13,8 +13,7 @@
 //= require select2
 //= require select2.full
 //= require jquery
-//= require bootstrap
 //= require turbolinks
-//= require moment
-//= require jquery-ui
-//= require jquery-ui/widgets/datepicker
+//= require jquery_ujs
+
+

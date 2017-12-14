@@ -1,0 +1,116 @@
+<h4>Payment Details</h4>
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+<%= form_for @payment, url:{action: 'create', controller: 'payments'} do |form| %>
+              <%= hidden_field_tag 'course_id', @course.id %>
+              <div class="control-group">
+              <label class="control-label">Payment mode :</label>
+              <div class="controls">
+              <%= form.radio_button  "payment_status","Online" %>&nbsp;&nbsp;<b>Online</b>&nbsp;&nbsp;
+              <%= form.radio_button  "payment_status","Offline"%>&nbsp;&nbsp;<b>Offline</b>
+<!--                 <input type="text" class="span11" placeholder="Enter Name" />
+ -->              </div>
+<!-- <div class="section">
+                <label class="input">User Name <i class="icon-append fa fa-user"></i>
+                  <%#= form.text_field :name, id: :admin_name %></label>
+                  </div> -->
+  <!-- <div class="field">
+    <%#= form.label :name %>
+    <%#= form.text_field :name, id: :admin_name %>
+  </div>
+ -->
+              <div class="control-group">
+              <label class="control-label">Payment Type:</label>
+              <div class="controls">
+              <%= form.radio_button  "payment_type","Fulpayment",:id => "payment_type2" %>&nbsp;&nbsp;<b>Full Payment</b>&nbsp;&nbsp;
+              <%= form.radio_button  "payment_type","Installment",:id => "payment_type1"%>&nbsp;&nbsp;<b>Installment</b>
+
+<!--                 <input type="text" class="span11" placeholder="Enter Name" />
+ -->              </div>
+            </div>
+ 
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>
+<strong>Student Name :</strong>
+<%= current_user.firstname %>
+</p>
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <hr>
+    <div class="widget-content nopadding">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+          <th>Course name</th>
+          <th>Course validity</th>
+          <th>Admission start date</th>
+          <th>Admission end date</th>
+          <th>Fees</th>
+          <th>Installment Fees</th>
+          <th>Remaining Fees</th>
+          <th colspan="3"></th>
+          </tr>
+        </thead>
+      <tbody>
+    <%# @courses.each do |course| %>
+        <%#if course.course_validity == Date.today%>
+        <%# course.status = 'false' %>
+        <%#course.update!(status: 'false')%>
+          <%#end%>
+          
+      <tr class="odd gradeX">
+
+        <tr>
+          <td><%= @course.course_name %></td>
+          <td><%= @course.course_validity %></td>
+          <td><%= @course.admission_start_date %></td>
+          <td><%= @course.admission_end_date %></td>
+          <td><%= text_field_tag :fees ,"",value: @course.fees, id: :fees,class: 'form-control' %></td>
+
+          <td><%= text_field_tag :instalment ,"", id: :instalment_fees,class: 'form-control' %></td>
+           <td><%= text_field_tag :remaining ,"", id: :remaining_fees,class: 'form-control' %></td>
+        </tr>
+  </tbody>
+</table>
+
+<br>
+ 
+  <div class="form-actions">
+     <%=form.submit class: 'btn btn-primary'%>
+  </div>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<% end %>
+
+<script type="text/javascript">
+  $("#payment_type1").on("change", function() {
+    var d = $('#fees').val()/2;
+    $('#remaining_fees').val(d);
+    $('#instalment_fees').val(d);
+  });
+</script>
+
+<script type="text/javascript">
+  $("#payment_type2").on("change", function() {
+    var d = $('#fees').val() - $('#fees').val();
+    $('#remaining_fees').val(d);
+    $('#instalment_fees').val(d);
+  });
+</script>

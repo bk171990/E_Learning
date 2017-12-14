@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201104117) do
+ActiveRecord::Schema.define(version: 20171213101315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20171201104117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "admin_referral_code"
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.string "body"
+    t.bigint "query_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["query_id"], name: "index_answers_on_query_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -71,6 +79,19 @@ ActiveRecord::Schema.define(version: 20171201104117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fees"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "enquiries", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "subject"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "general_settings", force: :cascade do |t|
@@ -79,6 +100,42 @@ ActiveRecord::Schema.define(version: 20171201104117) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "subject"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "course_id"
+    t.bigint "coupon_id"
+    t.string "payment_status"
+    t.string "payment_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "remaining_fees"
+    t.string "instalment_fees"
+    t.string "instalment"
+    t.string "remaining"
+    t.index ["coupon_id"], name: "index_payments_on_coupon_id"
+    t.index ["course_id"], name: "index_payments_on_course_id"
+    t.index ["student_id"], name: "index_payments_on_student_id"
+  end
+
+  create_table "queries", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_queries_on_student_id"
+    t.index ["user_id"], name: "index_queries_on_user_id"
   end
 
   create_table "question_types", force: :cascade do |t|
@@ -163,10 +220,16 @@ ActiveRecord::Schema.define(version: 20171201104117) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "queries"
   add_foreign_key "comments", "courses"
   add_foreign_key "coupon_courses", "coupons"
   add_foreign_key "coupon_courses", "courses"
   add_foreign_key "coupons", "courses"
+  add_foreign_key "payments", "coupons"
+  add_foreign_key "payments", "courses"
+  add_foreign_key "payments", "students"
+  add_foreign_key "queries", "students"
+  add_foreign_key "queries", "users"
   add_foreign_key "users", "admins"
   add_foreign_key "users", "general_settings"
 end

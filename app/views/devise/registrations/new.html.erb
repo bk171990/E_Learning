@@ -59,7 +59,7 @@
       <div class="container">
         <div class="mod-menu">
           <div class="row">
-            <div class="col-sm-2"> <a href="/home/index/" title="" class="logo"> <img src="assets/logo.png" alt=""> </a> </div>
+            <div class="col-sm-2"> <a href="/home/index/" title="" class="logo"> <img src="/assets/logo.png" alt=""> </a> </div>
             <div class="col-sm-10">
               <div class="main-nav">
                 <ul class="nav navbar-nav top-nav">
@@ -80,10 +80,10 @@
                     <li><a href="/home/about">About Us</a></li>
                     <li><a href="/home/courses">Courses</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
-                        <li><a href="courses.html"><i class="fa fa-angle-right"></i> Grid View</a></li>
-                        <li><a href="courses1.html"><i class="fa fa-angle-right"></i> List View</a></li>
+                        <li><a href="courses.html"><i class="fa fa-angle-right"></i>View Courses</a></li>
+                        <!-- <li><a href="/home/course1.html"><i class="fa fa-angle-right"></i> List View</a></li>
                         <li><a href="courses2.html"><i class="fa fa-angle-right"></i> Single Course</a></li>
-                      </ul>
+                      </ul> -->
                     </li>
                     <li><a href="/home/our_team">Our Team</a></li>
                     <li><a href="/home/blog">Blog</a> <span class="arrow"></span>
@@ -145,8 +145,7 @@
               </div>
               <div class="section">
                 <label class="input"> 
-                
-
+                  <label class="input"> <i class="icon-append fa fa-mobile"></i>
                   <%= f.text_field :phone_no, autofocus: true, placeholder:"Phone Number", id: :student_phone_no %>
                   <b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
               </div>
@@ -201,11 +200,7 @@
                 </div>
               </div> -->
 
-              <div class="section">
-                <label class="input"> <i class="icon-append fa fa-lock"></i>
-                <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password" %>
-                  <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
-              </div>
+             
 
               <div class="section">
               <label class="input">

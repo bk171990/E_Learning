@@ -30,6 +30,12 @@
   <strong>Status:</strong>
   <%= @course.status %>
 </p>
+<p>
+
+
+<%= image_tag @course.photo.url %>
+</p>
+
 
 <p>
   <strong>Batch:</strong>
@@ -49,23 +55,18 @@
 </div>
 </div>
 
+        
+
 <div class="widget-box">
   <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
     <h5>ADD COUPON</h5>
       </div>
       <div class="widget-content nopadding">
-      <form action="#" method="get" class="form-horizontal">
-      <div class="control-group">
 <%=render 'coupons/form'%> 
 <br>
-</div>
-</form>
-</div>
-</div>
 
 <h3>COUPON DETAILS</h3> 
 <%= render 'coupons/coupon'%>      
-</div>
 </div>
 </div>
 </div>

@@ -6,7 +6,10 @@ class User < ApplicationRecord
    scope :role_wise_users, ->(role) { where(role: role) }
    validates :phone_no, numericality: { only_integer: true }, length: \
   { minimum: 10, maximum: 10 }, allow_blank: true
+  belongs_to :student, optional:true
   scope :shod, ->(id) { where(id: id).take }
+  has_many :queries
+  belongs_to :student, optional:true
 
 
  def create_general_setting
@@ -24,4 +27,9 @@ class User < ApplicationRecord
   def self.current=(user)
     Thread.current[:user] = user
   end
+
+  # def student_name
+  #   [firstname, middlename, lastname].join(' ')
+  #  end
+
 end

@@ -52,6 +52,8 @@
     <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
            <%if current_user.role == 'Student'%>
             <li><a href="/courses/student_courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
+            <li><a href="/queries"><i class="icon icon-book"></i> <span>Query</span></a></li>
+
            <%end%>
 
       <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin' %>      <li><a href="/courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
@@ -62,6 +64,9 @@
 
       <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin'%>
         <li><a href="/students"><i class="icon-user-md"></i> <span>Admission</span></a></li>
+        <li><a href="/reports/report"><i class="icon-user-md"></i> <span>Reports</span></a></li>
+        <li><a href="/queries"><i class="icon icon-book"></i> <span>Students Questions</span></a></li>
+
       <%end%>
 
       <!-- <li><a href="#"><i class="icon icon-paper-clip"></i> <span>Reports</span></a></li> -->
@@ -69,11 +74,11 @@
           <li><a href="/admins"><i class="icon icon-user"></i> <span>Admin Users</span></a></li>
         <%end%>
    
-    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Menu Item Expand</span></a>
+    <!-- <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Menu Item Expand</span></a>
       <ul>
         <li><a href="#">Sub Menu 1</a></li>
            <li><a href="#">Sub Menu 2</a></li>
-              <li><a href="#">Sub Menu 3</a></li>
+              <li><a href="#">Sub Menu 3</a></li> -->
       </ul>
     </li>
     <!-- 

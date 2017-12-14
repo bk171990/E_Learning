@@ -1,0 +1,43 @@
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Query list</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @query.description %>
+</p>
+ 
+ <h6>Comments:</h6>
+
+<% @query.answers.each do |comment| %>
+  <p>
+<!--     <strong>Body:</strong>
+ -->    <%= comment.body %>
+  </p>
+
+<% end %>
+
+
+<%if current_user.role == 'Admin' || current_user.role == 'SuperAdmin' %>
+<%= form_with(model: [@query, @query.answers.build], local: true) do |form| %>
+ 
+  <p>
+   <!--  <%#= form.label :body %><br> -->
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit "Submit", class: "btn button" %>
+  </p>
+<% end %>
+ <%end%>
+ <br>
+
+<%= link_to 'Back', queries_path, class: "btn btn-primary" %>
+
+</div>
+</div>
+</div>
