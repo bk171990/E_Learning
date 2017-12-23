@@ -6,10 +6,11 @@ class HomeController < ApplicationController
 
   	def create
     	@message = Home.new(home_params)
-    		if @message.valid?
-    			@message.save
+    		if @message.save
+    			
       			UserMailer.new_message(@message).deliver_now
       			flash.now[:notice] = "Your messages has been sent."
+      			redirect_to '/home/contact'
       		else
       	flash.now[:error] = "An error occurred while delivering this message."    
     	render :new

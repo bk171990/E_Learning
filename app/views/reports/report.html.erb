@@ -1,10 +1,26 @@
-
+ <div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Reports</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+<%= form_for :payment, method: :get,remote:true,id: 'payment_payment' do |f|%>
  
-  <%= form_for :payment, method: :get,remote:true,id: 'payment_payment' do |f|%>
-  <font color="red"><b>Select Inventory Type to See Inventory Reports *</b></font>
- <%= f.select :payment,options_for_select(['Offline', 'Online', 'All']),{prompt:true}%>
+<div class="control-group">
+              <label class="control-label">Select:</label>
+              <div class="controls">
+ <%= f.select :payment,options_for_select(['Offline', 'Online', 'All']),{prompt:true},class: 'form-control'%>
+              </div>
+              </div>
+<!--          <input type="text" class="span11" placeholder="Enter Name" />
+ -->    
+           
+<% end %>
  
-<%end%>
+  
 <div id="stage">
   <%#=render 'report'%>
 </div>
@@ -20,9 +36,8 @@ $('#payment_payment').on('change', function() {
    		type: 'GET',
    		dataType: 'script',
    		data: {payment_payment: Item},
-   }).done(function(data) {
-    		$('#payment_payment').html(data); 
-   
+   }).done(function(data) { 
+
  });
 });
 </script>

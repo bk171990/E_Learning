@@ -26,9 +26,9 @@
               <td><%= admin.phonenumber %></td>
               <td><%= admin.password %></td>
               <td><%= admin.confirm_password %></td>
-              <td><%= link_to 'Show', admin %></td>
-              <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-              <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', admin, class: "btn btn-primary" %></td>
+              <td><%= link_to 'Edit', edit_admin_path(admin), class: "btn btn-warning" %></td>
+              <%#= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success" %>
             </tr>
             <% end %>
         </tbody>

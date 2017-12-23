@@ -12,6 +12,8 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/assets/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/assets/home.css"/>
+
 
   <!-- Template Styles -->
   <link rel="stylesheet" href="/assets/style.css" type="text/css" />
@@ -30,6 +32,8 @@
 
   <!-- Animations -->
   <link href="/assets/animations.min.css" rel="stylesheet" type="text/css" media="all" />
+
+
 </head>
 <body>
   <div class="site-wrapper" style="position: relative;">
@@ -56,47 +60,47 @@
 
 --> 
 
-<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-<li><a href="https://plus.google.com/discove"><i class="fa fa-google-plus"></i></a></li>
-<li class="last"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="clearfix"></div>
-<div class="header-section transparent style1 pin-style">
-  <div class="container">
-    <div class="mod-menu">
-      <div class="row">
-        <div class="col-sm-2"> <a href="/" title="" class="logo"> <img src="/assets/logo.png" alt=""> </a> </div>
-        <div class="col-sm-10">
-          <div class="main-nav">
-            <ul class="nav navbar-nav top-nav">
-              <li class="search-parent"> <a href="javascript:void(0)" title=""><i aria-hidden="true" class="fa fa-search"></i></a>
-                <div class="search-box">
-                  <div class="content">
-                    <div class="form-control">
-                      <input type="text" placeholder="Type to search" />
-                      <a href="#" class="search-btn"><i aria-hidden="true" class="fa fa-search"></i></a> </div>
-                      <a href="#" class="close-btn">x</a> </div>
-                    </div>
-                  </li>
-                  <li class="visible-xs menu-icon"> <a href="javascript:void(0)" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false"> <i aria-hidden="true" class="fa fa-bars"></i> </a> </li>
-                </ul>
-                <div id="menu" class="collapse">
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a href="/home/index">Home</a></li>
-                    <li><a href="/home/about">About Us</a></li>
-                    <li><a href="/home/courses">Courses</a> <span class="arrow"></span>
-                      <ul class="dm-align-2">
-                        <li><a href="/home/course1"><i class="fa fa-angle-right"></i>View Course</a></li>
-                        <!-- <li><a href="courses.html.erb"><i class="fa fa-angle-right"></i> Grid View</a></li> -->
-                        
-                        <!-- <li><a href="courses.html.erb"><i class="fa fa-angle-right"></i> Single Course</a></li> -->
-                      </ul>
-                    </li>
+            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/discove"><i class="fa fa-google-plus"></i></a></li>
+            <li class="last"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="header-section transparent style1 pin-style">
+            <div class="main-nav" data-spy="affix" data-offset-top="50">
+            <div class="container">
+              <div class="mod-menu">
+                <div class="row">
+                  <div class="col-sm-2"> <a href="/" title="" class="logo"> <img src="/assets/logo.png" alt=""></a> </div>
+                  <div class="col-sm-10">
+                      <ul class="nav navbar-nav top-nav">
+                        <li class="search-parent"> <a href="javascript:void(0)" title=""><i aria-hidden="true" class="fa fa-search"></i></a>
+                          <div class="search-box">
+                            <div class="content">
+                              <div class="form-control">
+                                <input type="text" placeholder="Type to search" />
+                                <a href="#" class="search-btn"><i aria-hidden="true" class="fa fa-search"></i></a> </div>
+                                <a href="#" class="close-btn">x</a> </div>
+                              </div>
+                            </li>
+                            <li class="visible-xs menu-icon"> <a href="javascript:void(0)" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false"> <i aria-hidden="true" class="fa fa-bars"></i> </a> </li>
+                          </ul>
+                          <div id="menu" class="collapse">
+                            <ul class="nav navbar-nav">
+                              <li class="active"><a href="/home/index">Home</a></li>
+                              <li><a href="/home/about">About Us</a></li>
+                              <li><a href="/home/courses">Courses</a> <span class="arrow"></span>
+                                <ul class="dm-align-2">
+                                  <li><a href="/home/course1"><i class="fa fa-angle-right"></i>View Course</a></li>
+                                  <!-- <li><a href="courses.html.erb"><i class="fa fa-angle-right"></i> Grid View</a></li> -->
+                                  
+                                  <!-- <li><a href="courses.html.erb"><i class="fa fa-angle-right"></i> Single Course</a></li>-->
+                                </ul>
+                              </li>
                     <!-- <li><a href="/home/our_team">Our Team</a></li>
                     <li><a href="/home/blog">Blog</a> <span class="arrow"></span>
                       <ul class="dm-align-2">
@@ -180,56 +184,50 @@
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
           </ol>
           <!-- Wrapper for slides -->
-     <!--  <div class="clearfix"></div>
-       <div class="section-lg m-bottom10">
-        <div class="container">
-         <div class="row">
-           <div class="cource-box">
-            <div class="row cource-text"> -->
-              <div class="clearfix"></div>
-              <div class="col-lg-4 col-md-4">
-                <% Course.all.each do |course| %>
-                <div class="container">
-                  <div class="row cource-box">
-                    <div class="col-lg-4 col-md-4"><a href="#"><img class="img-responsive" alt="" <%= image_tag course.photo.url %></a></a>
-                      <div class="cource-text">
-                        <p> <%=course.course_description%></p> 
-                        <a href="#" class="btn btn-small">Read More</a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <%end%>           
-          </div>
         </div>
-        </div>
-        
-
-        <!--end Courses-->
         <div class="clearfix"></div>
-        <div class="section-lg m-bottom10">
+        <div class="col-lg-4 col-md-4">
+          <% Course.all.each do |course| %>
           <div class="container">
-            <div class="col-md-8 col-md-pull-1"><img class="img-responsive" src="/assets/ux.jpg" alt="course"></div>
-            <div class="col-md-4">
-              <div class="m-top5">
-                <div class="fea-info">
-                  <h4><i class="icon-lightbulb"></i> Learn Anything Online</h4>
-                  <p>You can learn anything, at your own place, anywhere without access of Internet.</p>
-                </div>
-                <div class="fea-info">
-                  <h4><i class="icon-trophy"></i> Communicate People</h4>
-                  <p>The platform for knowledge discovery that helps you understand any topic through the most efficient paths..</p>
-                </div>
-                <div class="fea-info">
-                  <h4><i class="icon-puzzle"></i> Share Your Knowledge</h4>
-                  <p>Acess your test series, score performance report, Online/Hard copy study material and updates.</p>
+            <div class="row cource-box">
+              <div class="col-lg-4 col-md-4"><a href="#"><img class="img-responsive" alt="" <%= image_tag course.photo.url %></a></a>
+                <div class="cource-text">
+                  <p> <%=course.course_description%></p> 
+                  <a href="#" class="btn btn-small">Read More</a>
                 </div>
               </div>
+              <%end%>
             </div>
           </div>
         </div>
-        <!--end features-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end Courses-->
+<div class="clearfix"></div>
+<div class="section-lg m-bottom10">
+    <div class="col-md-8 col-md-pull-1"><img class="img-responsive" src="/assets/ux.jpg" alt="course"></div>
+    
+        <div class="fea-info">
+          <h4><i class="icon-lightbulb"></i> Learn Anything Online</h4>
+          <p>You can learn anything, at your own place, anywhere without access of Internet.</p>
+        </div>
+        <div class="fea-info">
+          <h4><i class="icon-trophy"></i> Communicate People</h4>
+          <p>The platform for knowledge discovery that helps you understand any topic through the most efficient paths..</p>
+        </div>
+        <div class="fea-info">
+          <h4><i class="icon-puzzle"></i> Share Your Knowledge</h4>
+          <p>Acess your test series, score performance report, Online/Hard copy study material and updates.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--end features-->
   <!-- <div class="clearfix"></div>
   <div class="section-lg m-bottom10">
     <div class="container">
@@ -260,101 +258,9 @@
     </div>
   </div> -->
   <!--end projects-->
-<!--   <div class="clearfix"></div>
-  <div class="section-lg m-bottom10">
-    <div class="container">
-      <div class="col-md-8 col-md-push-5"><img class="img-responsive" src="/assets/course-2.jpg" alt="course"></div>
-      <div class="col-md-4 col-md-pull-8">
-        <div class="m-top6">
-          <div class="fea-info">
-            <h4>Share Your Knowledge</h4>
-            <p>Suspendisse ante mi iaculis ac Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicit.</p>
-            <p>Suspendisse ante mi iaculis ac Suspendisse ante mi iaculis ac eleifend id venenatis.</p>
-          </div>
-          <ul class="list-nav">
-            <li><i class="icon-map-pin"></i>Sed rhoncus gravida eli eu</li>
-            <li><i class="icon-map-pin"></i>Nonummy nibh epsum dollar</li>
-            <li><i class="icon-map-pin"></i>Occaecat cupidatan is proident</li>
-            <li><i class="icon-map-pin"></i>Excepteur sit occaecat cupidatan.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!--end features-->
-  <!-- <div class="clearfix"></div>
-  <div class="section-lg m-bottom10">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 sec-heading text-center">
-          <h2>Meet Our Trainers</h2>
-          <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin sem iaculis.</p>
-        </div>
-      </div>
-      <div class="row animate-box" style="border-bottom:0;">
-        <div class="col-md-3 col-sm-3 text-center">
-          <div class="staff"> <img src="/assets/trainer-1.jpg" alt="trainer" class="img-responsive">
-            <h3>Jean Smith</h3>
-            <strong class="role">Marketing Instructor</strong> </div>
-        </div>
-        <div class="col-md-3 col-sm-3 text-center">
-          <div class="staff"> <img src="/assets/trainer-2.jpg" alt="trainer" class="img-responsive">
-            <h3>Jeremy Lawson</h3>
-            <strong class="role">PHP Instructor</strong> </div>
-        </div>
-        <div class="col-md-3 col-sm-3 text-center">
-          <div class="staff"> <img src="/assets/trainer-3.jpg" alt="trainer" class="img-responsive">
-            <h3>Jean Smith</h3>
-            <strong class="role">Marketing Instructor</strong> </div>
-        </div>
-        <div class="col-md-3 col-sm-3 text-center">
-          <div class="staff"> <img src="/assets/trainer-4.jpg" alt="trainer" class="img-responsive">
-            <h3>Jean Andrews</h3>
-            <strong class="role">Instructor</strong> </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!--end team-->
- <!--  <div class="clearfix"></div>
-  <div class="section-lg m-bottom10">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 sec-heading text-center">
-          <h2>Recent Posts</h2>
-          <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin sem iaculis.</p>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="cource-box"><a href="#"><img class="img-responsive" src="/assets/course-1.jpg" alt=""></a>
-            <div class="cource-text">
-              <h4><a href="#">Photoshop - Web Deisgn</a></h4>
-              <span class="posted-on">Jan. 26th, 2017</span> <span class="comment"><a href="">53 <i class="icon-heart"></i></a></span>
-              <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin.</p>
-              <a href="#" class="btn btn-orange">Read More</a> </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="cource-box"><a href="#"><img class="img-responsive" src="/assets/course-4.jpg" alt=""></a>
-            <div class="cource-text">
-              <h4><a href="#">Photoshop - Web Deisgn</a></h4>
-              <span class="posted-on">Jan. 26th, 2017</span> <span class="comment"><a href="">53 <i class="icon-heart"></i></a></span>
-              <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin.</p>
-              <a href="#" class="btn btn-orange">Read More</a> </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="cource-box"><a href="#"><img class="img-responsive" src="/assets/course-3.jpg" alt=""></a>
-            <div class="cource-text">
-              <h4><a href="#">Photoshop - Web Deisgn</a></h4>
-              <span class="posted-on">Jan. 26th, 2017</span> <span class="comment"><a href="">53 <i class="icon-heart"></i></a></span>
-              <p>Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin.</p>
-              <a href="#" class="btn btn-orange">Read More</a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!--end blog-->
+
+
+
   <div class="clearfix"></div>
   <div class="section-lg">
     <div class="container">
@@ -453,7 +359,8 @@
 
 <a href="#" class="scrollup"></a> 
 <!-- end scroll to top of the page--> 
-
+</body>
+</html>
 <!-- jQuery first, then Tether, then Bootstrap JS. --> 
 <script src="/assets/jquery.js"></script> 
 <script src="/assets/bootstrap.min.js"></script> 
@@ -475,5 +382,3 @@
 
 <!-- Scroll Up --> 
 <script src="/assets/totop.js" type="text/javascript"></script>
-</body>
-</html>

@@ -9,21 +9,25 @@
         <div class="form-horizontal"">
        
 <%= form_with scope: :query, url: queries_path, local: true do |form| %>
+    <div class= "span6">
   <p>
     <br>
     <%= form.text_area :description %>
   </p>
+  </div>
  
- 
+ <div class= "span6">
   <p>
-    <%= form.submit "Submit", class: "btn button" %>
+    <%= form.submit "Submit", class: "btn btn-success" %>
   </p>
+  </div>
 <% end %>
 
-</div>
-</div>
-</div>
-<%= link_to 'Back', queries_path, class: "btn btn-success" %>
 
+<%= link_to 'Back', queries_path, class: "btn btn-primary" %>
+
+</div>
+</div>
+</div>
 </div>
 </div>

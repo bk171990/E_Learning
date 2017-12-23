@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
   end
 
   # GET /students/new
@@ -28,8 +29,8 @@ class StudentsController < ApplicationController
     @ref1 = @student.name[0..2]
     respond_to do |format|
       if @student.save
-        @ref = @ref1 += rand(0..10000).to_s
-        @student.update(referral_code: @ref)
+       @ref = @ref1 += rand(0..10000).to_s
+       @student.update(referral_code: @ref)
        @user = User.create!(firstname: @student.name, role: 'Student', email: @student.email, password: @student.password)
        @user.update(student_id: @student.id)
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
