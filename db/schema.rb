@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213101315) do
+ActiveRecord::Schema.define(version: 20171223131739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,12 @@ ActiveRecord::Schema.define(version: 20171213101315) do
     t.string "instalment_fees"
     t.string "instalment"
     t.string "remaining"
+    t.string "txnid"
+    t.string "amount"
+    t.string "status"
+    t.string "access_token"
+    t.string "email"
+    t.string "fees"
     t.index ["coupon_id"], name: "index_payments_on_coupon_id"
     t.index ["course_id"], name: "index_payments_on_course_id"
     t.index ["student_id"], name: "index_payments_on_student_id"
@@ -176,6 +182,10 @@ ActiveRecord::Schema.define(version: 20171213101315) do
     t.datetime "updated_at", null: false
     t.boolean "status", default: false
     t.string "stud_no"
+    t.string "txnid"
+    t.string "amount"
+    t.string "payment_status"
+    t.string "access_token"
   end
 
   create_table "users", force: :cascade do |t|

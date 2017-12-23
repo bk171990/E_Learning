@@ -4,7 +4,6 @@
             <h5>Admin Details</h5>
           </div>
           <div class="widget-content collapse in" id="collapseG4">
-
 <p id="notice"><%= notice %></p>
 <p id="notice"><%= notice %></p>
 
@@ -22,7 +21,9 @@
 <%= current_user.student.phone_number%>
 </p>
 
+<%if @payment.payment_type == 'Installment'%>
 <p>
+
   <strong>Remaning:</strong>
   <%= @payment.remaining %>
 </p>
@@ -32,8 +33,19 @@
   <%= @payment.instalment %>
 </p>
 
+<%else%>
+<p>
+<strong>Fees</strong>
+
+<%=@payment.fees%>
+</p>
+
+<%end%>
 
 
-<td><%= link_to 'Download PDF ',show_payment_payment_path(@payment, format: 'pdf'),target: '_blank', class: "btn btn-sucess"%> </td>
-                                                                                                                                                                                                                                                                                                                          
 
+
+<td><%= link_to 'Download PDF ',show_payment_payment_path(@payment, format: 'pdf'),target: '_blank', class: "btn btn-success"%> </td>
+<%if @payment.payment_status == 'Online'%>                                                                                                                                                                         
+<%= link_to "Confirm To Pay", confirm_to_pay_payment_path(@payment.id), class: 'btn btn-warning'%>
+<%end%>

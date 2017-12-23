@@ -13,5 +13,5 @@
 //= require select2
 //= require select2.full
 //= require jquery
+//= require jquery-ujs
 //= require turbolinks
-//= require jquery_ujs

@@ -12,11 +12,13 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="/assets/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/assets/home.css"/>
+
 
 <!-- Template Styles -->
 <link rel="stylesheet" href="/assets/style.css" type="text/css" />
 <link rel="stylesheet" href="/assets/font-awesome.min.css">
-<link rel="stylesheet" href="/assets/Simple-Line-Icons-Webfont/simple-line-icons.css"/>
+<link rel="stylesheet" href="/assets/simple-line-icons.css"/>
 <link rel="stylesheet" href="/assets/et-line-font.css">
 
 <!-- Magnific Popup -->
@@ -52,14 +54,14 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <div class="header-section transparent style1 pin-style">
-      <div class="container">
-        <div class="mod-menu">
-          <div class="row">
-            <div class="col-sm-2"> <a href="/" title="" class="logo"> <img src="images/logo.png" alt=""> </a> </div>
-            <div class="col-sm-10">
-              <div class="main-nav">
-                <ul class="nav navbar-nav top-nav">
+            <div class="header-section transparent style1 pin-style">
+            <div class="main-nav" data-spy="affix" data-offset-top="50">
+            <div class="container">
+              <div class="mod-menu">
+                <div class="row">
+                  <div class="col-sm-2"> <a href="/" title="" class="logo"> <img src="/assets/logo.png" alt=""></a> </div>
+                  <div class="col-sm-10">
+                      <ul class="nav navbar-nav top-nav">
                   <li class="search-parent"> <a href="javascript:void(0)" title=""><i aria-hidden="true" class="fa fa-search"></i></a>
                     <div class="search-box">
                       <div class="content">
@@ -144,7 +146,7 @@
     </div>
   </div>
   <!--end counters-->
-   <div class="clearfix"></div>
+     <div class="clearfix"></div>
               <div class="col-lg-4 col-md-4">
                 <% Course.all.each do |course| %>
                 <div class="container">
@@ -153,17 +155,16 @@
                       <div class="cource-text">
                         <p> <%=course.course_description%></p> 
                         <a href="#" class="btn btn-small">Read More</a>
-                      </div>
+                        </div>
                     </div>
+                    <%end%>
+                  </div>
                 </div>
               </div>
+              </div>
             </div>
-            <%end%>           
-          </div>
         </div>
         </div>
-                
-
          <!--  <div class="cource-box"><a href="#"><img class="img-responsive" src="images/course-1.jpg" alt=""></a>
             <div class="cource-text">
               <h4><a href="#">Photoshop - Web Deisgn</a> <span>$195</span></h4>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :payments do
     member do
     get :show_payment
+      get :confirm_to_pay
   end
 end
 
@@ -38,7 +39,8 @@ end
     resources :coupons
   end
   resources :coupons
-  resources :students
+  resources :students do 
+  end
   resources :admins
   devise_for :users, controllers: { registrations: 'registrations' }
   as :user do
@@ -75,6 +77,6 @@ end
     end
   end
 
-      
+    match '/payu_callback' => 'payments#payu_return', :via => [:get, :post], :as => 'payments_payu_return' 
         
 end

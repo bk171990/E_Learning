@@ -1,0 +1,54 @@
+.header-section .logo {
+
+    /* display: block; */
+
+    /* margin-top: 18px; */
+
+    margin-left: 15px;
+
+    width: 100%;
+
+}
+.header-section.transparent {
+}
+
+.header-section img {
+
+    max-width: 100%;
+
+    width: 100%;
+
+}
+
+.header-section .container {
+    position: relative;
+
+}
+
+
+.affix {
+    top:0px;
+    position:fixed;
+
+    z-index: 999;
+
+    background-color:transparent;
+
+    background: black;
+
+    width: 100%;
+    opacity: 0.8;
+}
+
+.header-section .main-nav .nav.top-nav {
+  float: right;
+}
+/* line 343, ../sass/screen.scss */
+.header-section .main-nav .nav.top-nav > li {
+  float: left;
+}
+
+.header-section.pin-style .mod-menu {
+    border: none !important;
+  }
+

@@ -6,12 +6,15 @@
   <%if current_user.role == 'Student'%>
 <%=link_to 'Add New Query', new_query_path, class: "btn btn-danger" %>
 <%end%>
-<div class="widget-content nopadding">
+
+     <%if current_user.role == 'Admin' || current_user.role == 'SuperAdmin'%>
+     <%end%>
+     <div class="widget-content nopadding">
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
     <th>Descriptions</th>
-     <th><%if current_user.role == 'Admin' || current_user.role == 'SuperAdmin'%>Student Name <%end%></th>
+     <th>Student Name</th>
      <th colspan="2"></th>
   </tr>
  

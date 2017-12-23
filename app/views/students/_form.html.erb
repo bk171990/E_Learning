@@ -50,6 +50,14 @@
               <!-- </div> -->
             <!-- </fieldset> -->
               
+               <div class="control-group">
+              <label class="control-label">Select Course :</label>
+              <div class="controls">
+                  <%= form.select :course_id, Course.all.collect{|course| [course.course_name, course.id]},{prompt:true}, class: 'span11'%>
+
+                  </div>
+                </div>
+
                 <div class="control-group">
               <label class="control-label">Date Of Birth :</label>
               <div class="controls">

@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-	default from: 'demo.qset@gmail.com'
+	default to: 'demo.qset@gmail.com'
 
 def new_message(message)
    @message = message  
