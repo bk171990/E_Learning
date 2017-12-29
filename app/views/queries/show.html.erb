@@ -7,9 +7,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @query.description %>
+  <strong>Questions:</strong>
+
 </p>
+
+<% @rohan = Query.all %>
+<% @rohan.each do |com| %>
+
+<% if com.student.name == @query.student.name %>
+  <br><%= com.description %>
+<% end %>
+
+
+<% end %>
+
  
  <h6>Comments:</h6>
 

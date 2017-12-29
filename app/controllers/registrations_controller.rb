@@ -3,10 +3,8 @@ class RegistrationsController < Devise::RegistrationsController
 		def create
     		super
     		@user.create_general_setting
-        @student = Student.create!(name: @user.firstname, email: @user.email, password: @user.password)
-        @user.update(student_id: @student.id )
-
-
+=begin        @student = Student.create!(name: @user.firstname, email: @user.email, password: @user.password, referenced_by: @user.referenced_by)@user.update(student_id: @student.id)
+=end
   	end
 
 

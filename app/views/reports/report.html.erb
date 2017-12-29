@@ -15,18 +15,13 @@
  <%= f.select :payment,options_for_select(['Offline', 'Online', 'All']),{prompt:true},class: 'form-control'%>
               </div>
               </div>
-<!--          <input type="text" class="span11" placeholder="Enter Name" />
- -->    
-           
+         
 <% end %>
  
   
 <div id="stage">
-  <%#=render 'report'%>
 </div>
  
-
-
 <script type='text/javascript'>
 $('#payment_payment').on('change', function() {
  			var payment_payment;
