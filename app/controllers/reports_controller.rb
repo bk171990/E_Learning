@@ -6,8 +6,10 @@ class ReportsController < ApplicationController
       @payment_type = params[:payment_payment]
       if @payment_type == 'Offline'
       	@payments = Payment.list1
-      else
+      elsif @payment_type == 'Online'
       	@payments = Payment.list2
+      else
+        @payments = Payment.all
       end
     end
 end

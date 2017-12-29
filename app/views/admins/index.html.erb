@@ -9,6 +9,7 @@
         <thead>
           <tr>
             <tr class="odd gradeX">
+            <th>Sr. No.</th>
              <th>Name</th>
              <th>Email</th>
              <th>Phonenumber</th>
@@ -19,8 +20,9 @@
             </tr>
         </thead>
         <tbody>
-          <% @admins.each do |admin| %>
+          <% @admins.each_with_index do |admin, i| %>
             <tr>
+              <td><%= i+1%></td>
               <td><%= admin.name %></td>
               <td><%= admin.email %></td>
               <td><%= admin.phonenumber %></td>

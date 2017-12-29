@@ -29,10 +29,12 @@ class StudentsController < ApplicationController
     @ref1 = @student.name[0..2]
     respond_to do |format|
       if @student.save
+      if current_user.role == 'Student'
+       user = current_user
+       user.update!(student_id: @student.id)
+       end
        @ref = @ref1 += rand(0..10000).to_s
        @student.update(referral_code: @ref)
-       @user = User.create!(firstname: @student.name, role: 'Student', email: @student.email, password: @student.password)
-       @user.update(student_id: @student.id)
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
@@ -74,6 +76,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :middlename, :lastname, :dob, :address, :landmark, :city, :state, :country, :pincode, :referral_code, :course, :duration, :phone_number, :image, :coupon_code, :email, :password, :conf_password, :stud_no)
+      params.require(:student).permit(:name, :course_name, :middlename, :course_id, :lastname, :dob, :address, :landmark, :city, :state, :country, :pincode, :referral_code, :course, :duration, :phone_number, :image, :coupon_code, :email, :password, :conf_password, :stud_no, :referenced_by)
     end
 end

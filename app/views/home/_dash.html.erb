@@ -35,7 +35,7 @@
         <li><a href="/users/sign_out"><i class="icon-key"></i> Log Out</a></li>
       </ul>
     </li>
-    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+    <!-- <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li> -->
     <li class=""><a title="" href="/users/sign_out"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
   </ul>
 </div>
@@ -48,19 +48,27 @@
 <!--close-top-serch-->
 <!--sidebar-menu-->
   <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
-  <ul>
-    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
-           <%if current_user.role == 'Student'%>
+  <ul style="display: block;">
+    <li class="active"><a href="#"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+           
+          <%if current_user.role == 'Student'%>
+          <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Student Addmission</span></a>
+        <ul>
+          <%if current_user.student.blank?%>
+            <li><a href="/students/new">Form</a></li>
+        </ul>
+            </li>
+            <%end%>
             <li><a href="/courses/student_courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
             <li><a href="/queries"><i class="icon icon-book"></i> <span>Query</span></a></li>
+            
 
            <%end%>
 
-      <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin' %>      <li><a href="/courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
+      <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin' %>      
+      <li><a href="/courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
       <%end%>
-      <%#if current_user.role == 'SuperAdmin'%>
-<!--           <li><a href="/coupons"><i class="icon icon-book"></i> <span>Coupons</span></a></li>
- -->      <%#end%>
+    
 
       <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin'%>
         <li><a href="/students"><i class="icon-user-md"></i> <span>Admission</span></a></li>
@@ -69,205 +77,21 @@
 
       <%end%>
 
-      <!-- <li><a href="#"><i class="icon icon-paper-clip"></i> <span>Reports</span></a></li> -->
+      
         <%if current_user.role == 'SuperAdmin'%>
           <li><a href="/admins"><i class="icon icon-user"></i> <span>Admin Users</span></a></li>
         <%end%>
    
-    <!-- <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Menu Item Expand</span></a>
-      <ul>
-        <li><a href="#">Sub Menu 1</a></li>
-           <li><a href="#">Sub Menu 2</a></li>
-              <li><a href="#">Sub Menu 3</a></li> -->
-      </ul>
-    </li>
-    <!-- 
-    
-    <li><a href="basic-form.html"><i class="icon icon-th-list"></i> <span>Form Styles</span> </a>
-      
-    </li>
-    
-     <li><a href="#"><i class="icon icon-pencil"></i> <span>Online Exam</span></a></li>
-    
-    <li><a href="Typography.html"><i class="icon icon-text-width"></i> <span>Typography</span></a></li>
-    </ul> -->
 </div>
-<!--sidebar-menu-->
+</ul>
 
-<!--main-container-part-->
 <div id="content">
 <!--breadcrumbs-->
     <div id="content-header">
-    <div id="breadcrumb"> <!-- <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> --></div>
+    <div id="breadcrumb"> 
   </div>
-<!--End-breadcrumbs-->
-
- 
-
-<!--Content-box-->    
-    <!-- <div class="row-fluid">
-      <div class="widget-box">
-        <div class="widget-title bg_lg">
-          <h5>Site Analytics</h5>
-        </div>
-        <div class="widget-content" >
-          <div class="row-fluid">
-            <div class="span12">
-            Place content here 
-            (Use spa1, span2, span3.....span 12 classes just like bootstrap columns. You can also use bootstrap classes for column purpose. 
-            You can add DIV here to fetch AJAX Data from RubyonRails.
-            )
-            </div>
-          
-          </div>
-        </div>
-      </div>
-    </div>
-<!--End-Content-box--> 
-    <!-- <hr/>
-    <div class="row-fluid">
-      <div class="span6">
-        <div class="widget-box">
-          <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2">
-            <span class="icon"><i class="icon-arrow-down"></i></span> <h5>Collapsable Content</h5>
-          </div>
-          <div class="widget-content nopadding collapse in" id="collapseG2">
-            <ul class="recent-posts">
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/thumb.jpg"> </div>
-                <div class="article-post"> <span class="user-info"> Dummy Post</span>
-                  <p><a href="#">Dummy description here.</a> </p>
-                </div>
-              </li>
-              
-               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/thumb.jpg"> </div>
-                <div class="article-post"> <span class="user-info"> Dummy Post</span>
-                  <p><a href="#">Dummy description here.</a> </p>
-                </div>
-              </li>
-             
-              <li>
-                <button class="btn btn-warning btn-mini">View All</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
-            <h5>Progress Box</h5>
-          </div>
-          <div class="widget-content">
-            <ul class="unstyled">
-              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> Progress Bar 1 <span class="pull-right strong">567</span>
-                <div class="progress progress-striped ">
-                  <div style="width: 81%;" class="bar"></div>
-                </div>
-              </li>
-              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> Progress Bar 2 <span class="pull-right strong">507</span>
-                <div class="progress progress-success progress-striped ">
-                  <div style="width: 72%;" class="bar"></div>
-                </div>
-              </li>
-              <li> <span class="icon24 icomoon-icon-arrow-down-2 red"></span> Progress Bar 3 <span class="pull-right strong">457</span>
-                <div class="progress progress-warning progress-striped ">
-                  <div style="width: 53%;" class="bar"></div>
-                </div>
-              </li>
-              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> Progress Bar 4 <span class="pull-right strong">8</span>
-                <div class="progress progress-danger progress-striped ">
-                  <div style="width: 3%;" class="bar"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="span6">
-        <div class="widget-box widget-chat">
-          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
-            <h5>Placeholder</h5>
-          </div>
-          <div class="widget-content collapse in" id="collapseG4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </div>
-          </div>
-          
-          
-          
-          <div class="widget-box">
-          <div class="widget-title">
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
-              <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
-              <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
-            </ul>
-          </div>
-          
-          <div class="widget-content tab-content">
-            <div id="tab1" class="tab-pane active">
-              <p>Tab content 1</p>
-              </div>
-            <div id="tab2" class="tab-pane">
-              <p>Tab content 2</p>
-            </div>
-            <div id="tab3" class="tab-pane">
-             <p>Tab content 3</p>
-             </div>
-          </div>
-        </div>
-          
-          
-          
-        </div>
-        
-        <div class="accordion" id="collapse-group">
-          <div class="accordion-group widget-box">
-            <div class="accordion-heading">
-              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                <h5>Accordion Example 1</h5>
-                </a> </div>
-            </div>
-            <div class="collapse in accordion-body" id="collapseGOne">
-              <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
-            </div>
-          </div>
-          <div class="accordion-group widget-box">
-            <div class="accordion-heading">
-              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                <h5>Accordion Example 2</h5>
-                </a> </div>
-            </div>
-            <div class="collapse accordion-body" id="collapseGTwo">
-              <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
-            </div>
-          </div>
-          <div class="accordion-group widget-box">
-            <div class="accordion-heading">
-              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                <h5>Accordion Example 3</h5>
-                </a> </div>
-            </div>
-            <div class="collapse accordion-body" id="collapseGThree">
-              <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
-            </div>
-          </div>
-        </div>
-        
-        
-      </div>
-    </div>
   </div>
-</div> -->
 
-<!--end-main-container-part-->
-
-<!--Footer-part-->
-
-<!--  -->
-
-<!--end-Footer-part-->
 
 <script src="/assets/excanvas.min.js"></script> 
 <script src="/assets/jquery.min.js"></script> 

@@ -1,4 +1,42 @@
+<html>
+<head>
+<style>
 
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+} 
+</style>
+</head>
+<body>
 <p id="notice"><%= notice %></p>
 <h1>Queries</h1>
 <div class="container-fluid">
@@ -17,17 +55,33 @@
      <th>Student Name</th>
      <th colspan="2"></th>
   </tr>
+  <% letters = Array.new([]) %>
  
   <% @queries.each do |query| %>
-    <tr>
-      <td><%= query.description %></td>
-       <td><%= query.student.name if current_user.role == 'Admin' || current_user.role == 'SuperAdmin' %></td>
 
-      <td><%= link_to 'Show', query_path(query),class: 'btn btn-info' if current_user.role == 'Student' %></td>
-      <td><%= link_to 'Reply', query_path(query),class: 'btn btn-info' if current_user.role == 'Admin' || current_user.role == 'SuperAdmin'%></td>
-      <!-- <td><%#= link_to 'Destroy', query_path(query),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td> -->
-    </tr>
+
+  <% value = letters.include?(query.student.name) %>
+  <% value %>
+
+    <% letters.push(query.student.name) %>
+    <% if value==false %>
+            <tr>
+              <td><%= query.description %></td>
+               <td><%= query.student.name if current_user.role == 'Admin' || current_user.role == 'SuperAdmin' %></td>
+
+
+              <td><%= link_to 'Show', query_path(query),class: 'btn btn-info' if current_user.role == 'Student' %></td>
+              <td><%= link_to 'Reply', query_path(query),class: 'btn btn-info' if current_user.role == 'Admin' || current_user.role == 'SuperAdmin'%></td>
+              <!-- <td><%#= link_to 'Destroy', query_path(query),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td> -->
+            </tr>
+    <% end %>
   <% end %>
 </table>
+
+
+
+
+</body>
+</html>
