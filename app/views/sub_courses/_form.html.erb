@@ -1,0 +1,39 @@
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>New Course</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+
+<%= form_with(model: sub_course, local: true) do |form| %>
+  <% if sub_course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sub_course.errors.count, "error") %> prohibited this sub_course from being saved:</h2>
+
+      <ul>
+      <% sub_course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+    <%= form.label :course_id %>
+    <%= form.select :course_id,@courses.collect{|c| [c.course_name, c.id]},{prompt:true},id: 'course_id',class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_courseName %>
+    <%= form.text_field :name, id: :sub_course_name %>
+  </div>
+
+ 
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

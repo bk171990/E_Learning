@@ -1,0 +1,29 @@
+<div class="span6">
+  <div class="widget-box widget-chat">
+    <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+      <h5>Questions</h5>
+    </div>
+     <div class="widget-content collapse in" id="collapseG4">
+        <%= form_for :exam_question,url: {action: 'save_test', controller: 'examinations',examination_id: @examination.id,student_id:current_user.student_id}, html:{id: "user_form"} do |f| %>
+          <table cellpadding="5" cellspacing="5">
+            <% @exam_questions.each_with_index do |q,j| %>
+             <tr><th><%j=j+1%><%= j%>: <%= q.name %></th></tr>
+              <% @options = Option.where(exam_question_id: q.id) %>
+                <% @options.each_with_index do |opt,i| %>
+               <tr>
+                 <td>
+                  <%= f.radio_button q.id, opt.id %>
+                  <%i=i+1%>
+                 
+                  <%= i%> : <%= opt.option %>
+                 </td>
+               </tr>
+               <%end%>
+               <td><%172.times do |n|%>-<%end%></td>
+               <%end%>
+          </table>
+
+          <%= f.submit "submit",class: "btn btn-primary"%>
+ <%end%>
+ </div>
+          </div>

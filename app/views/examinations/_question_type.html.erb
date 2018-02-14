@@ -1,0 +1,16 @@
+<% if @options == 'True or False' %>
+    <h5>Options</h5>
+   	<% 2.times do |opt|%><br>
+	<%= text_field :description, "option[#{opt+1}]", {class: "form-control", placeholder:"option#{opt+1}"} %>
+	<%=radio_button_tag "is_answer[]",opt+1,false%>
+	<%end%>
+<%end%>
+
+<% if @options == 'Multiple Choices' %>
+    <h5>Options</h5>
+    <% 4.times do |opt|%><br>
+    <%= text_field :description, "option[#{opt+1}]", {class: "form-control", placeholder:"option#{opt+1}"} %>
+	<%=radio_button_tag "is_answer[]",opt+1,false%>
+	<%end%>
+    
+<%end%>

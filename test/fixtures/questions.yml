@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  question: MyString
-  no_of_option: 1
-  question_type_id: 1
+  exam_id: 1
+  content: MyText
 
 two:
-  question: MyString
-  no_of_option: 1
-  question_type_id: 1
+  exam_id: 1
+  content: MyText

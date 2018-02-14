@@ -12,6 +12,13 @@
 //
 //= require select2
 //= require select2.full
-//= require jquery
-//= require jquery-ujs
+//= require jquery_nested_form
 //= require turbolinks
+//= require trix
+//= require ckeditor/init
+//= require moment
+//= require bootstrap-datetimepicker
+function remove_fields(link) {
+        $(link).previous("input[type=hidden]").value = "1";
+        $(link).up(".fields").hide();
+}

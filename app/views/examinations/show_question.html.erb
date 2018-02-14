@@ -1,0 +1,25 @@
+<div class="span12">
+        <div class="widget-box widget-chat">
+          <div class="widget-title"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Questions</h5>
+          </div>
+       <table>
+            <%@examination.exam_questions.each_with_index do |q,i| %>
+              <tr>
+                <th> <%= i+1 %>.</th>
+              <th><%= q.name %></th>
+              </tr>
+              <% @options = Option.where(exam_question_id: q.id) %>
+              <% q.options.each_with_index do |opt, j| %>
+                <tr>
+                  <td><%= j+1 %>.</td>
+                  <td><%= opt.option %>
+                  </td>
+                </tr>
+                <%end%>
+        <%end%>
+      </table>
+    </div>
+</div>
+
+</div>

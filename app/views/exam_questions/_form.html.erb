@@ -1,0 +1,53 @@
+<div class="span6">
+  <div class="widget-box">
+    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+    <h5>New Question</h5>
+    </div>
+   	<div class="widget-content nopadding">
+          <div class="control-group">
+          	<%= nested_form_for @exam_question, url:{action: 'create', controller: 'exam_questions'} do |f| %>  
+
+				<p><%= f.cktext_area :name, rows: 10 %></p>
+					<table id="exam_answers">
+  					<%= f.fields_for :exam_answers, :wrapper => false do |task_form| %>
+    					<tr class="fields">
+      						<td><%= task_form.text_field :description %></td>
+      						<td><%= task_form.link_to_remove "Remove this task" %></td>
+    					</tr>
+  						<% end %>
+					</table>
+					<%=f.select :question_type, options_for_select(['True or False', 'Multiple Choices']),{prompt:true},{class: "form-control"}%>
+					<p><%= f.link_to_add "Add a task", :exam_answers, :data => { :target => "#exam_answers" } %></p>
+					<div id = 'question_type'>
+				</div>
+					<div class="col-sm-5 col-sm-offset-5"> 
+      					<div class="form-actions">               
+        					<%= f.submit 'Submit', class: "btn btn-primary",style:"width:80px"%>
+      					</div>
+    				</div>
+    			<% end %>
+				 </div>
+	   </form>
+	</div>
+  </div>
+ </div>
+<script src="/assets/jquery.min.js"></script>
+<script src="/assets/nested_form.js"></script>
+
+
+<script type="text/javascript">
+	$('#exam_question_question_type').on('change', function() {
+		var question_id;
+ 			Item = $(this).val();
+  	$.ajax({
+   		url: '/exam_questions/select_question_type',
+   		type: 'GET',
+   		dataType: 'script',
+   		data: {question_id: Item},
+   }).done(function(data) { 
+
+ });
+});
+</script>
+
+

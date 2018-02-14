@@ -1,13 +1,41 @@
 Rails.application.routes.draw do
+  resources :options
+  resources :examinations do 
+    collection do      get :create_exam
+      post :insert_exam
+      get :insert_mark
+      get :insert
+      get :exam
+      post :save_test
+      get :question_paper
+      post :save_test
+      get :apply_exam
+      get :publish_result
+      get :display_result
+      post :qualify_student
+      get :qualified_student
+       get :select_question_type
+      get :option
+      get :disp_time
+    end
+    member do
+      get :show_question
+    end
+   
+      resources :exam_questions
+  end
+
+  resources :exams
+  get 'exam_questions/index'
+
+  get 'exam_questions/new'
+
+  resources :sub_courses
   get 'enquiries/index'
 
   get 'enquiries/create'
 
-  resources :questions do
-   member do
-    get :option
-   end
-  end
+  
 
   resources :payments do
     member do
@@ -16,6 +44,12 @@ Rails.application.routes.draw do
   end
 end
 
+
+
+
+  resources :exam_answers
+
+  resources :sub_courses
   resources :queries do
     resources :answers
   end
@@ -31,7 +65,7 @@ end
   end
   resources :reports do 
     collection do
-      get :select, :report
+      get :select, :report, :reference_report , :select_reference
     end
   end
 

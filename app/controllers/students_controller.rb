@@ -33,6 +33,7 @@ class StudentsController < ApplicationController
        user = current_user
        user.update!(student_id: @student.id)
        end
+       User.create(email: @student.email, password: @student.password, student_id: @student.id, role: 'Student')
        @ref = @ref1 += rand(0..10000).to_s
        @student.update(referral_code: @ref)
         format.html { redirect_to @student, notice: 'Student was successfully created.' }

@@ -1,0 +1,113 @@
+
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>New Course</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+
+<%= form_with(model: examination, local: true) do |form| %>
+  <% if examination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(examination.errors.count, "error") %> prohibited this examination from being saved:</h2>
+
+      <ul>
+      <% examination.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+              <label class="control-label">Exam Name :</label>
+              <div class="controls">
+    <%= form.text_field :exam_name, id: :examination_exam_name %>
+  </div>
+  </div>
+
+ <div class="control-group">
+              <label class="control-label">Description :</label>
+              <div class="controls">
+    <%= form.text_field :description, id: :examination_description %>
+  </div>
+  </div>
+
+  <div class="control-group">
+              <label class="control-label">Total no. of Questions :</label>
+              <div class="controls">
+    <%= form.text_field :total_no_of_question, id: :examination_total_no_of_question %>
+  </div>
+  </div>
+
+ <div class="control-group">
+              <label class="control-label">Mark per Question:</label>
+              <div class="controls">
+    <%= form.text_field :mark_per_question, id: :examination_mark_per_question %>
+  </div>
+  </div>
+
+  <div class="control-group">
+              <label class="control-label">Time for each Question(sec.) :</label>
+              <div class="controls">
+    <%= form.time_select :time_for_question, id: :examination_time_for_question %>
+  </div>
+  </div>
+
+  <div class="control-group">
+              <label class="control-label">Total time of Exam :</label>
+              <div class="controls">
+    <%= form.text_field :total_time_for_exam, id: :examination_total_time_for_exam %>
+  </div>
+</div>
+  
+
+  <div class="control-group">
+              <label class="control-label">Total marks of Question :</label>
+              <div class="controls">
+    <%= form.text_field :total_marks_of_question, id: :examination_total_marks_of_question %>
+  </div>
+  </div>
+
+  <div class="control-group">
+              <label class="control-label">Publish Exam Time and Date :</label>
+              <div class="controls">
+    <%= form.datetime_field :publish_exam_time_and_date, id: :examination_publish_exam_time_and_date%>
+  </div>
+  </div>
+
+  <div class="control-group">
+              <label class="control-label">Exam Rules and Regulation :</label>
+              <div class="controls">
+    <%= form.text_area :exam_rules_and_regulations, id: :examination_exam_rules_and_regulations %>
+  </div>
+  </div>
+
+  <div class="form-actions">
+     <%= form.submit "Create Exam" ,class: "btn btn-success"%>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+var a;
+var b;
+var c;
+  $("#examination_time_for_question_5i").on("change", function() {
+    a = $("#examination_time_for_question_5i").val();
+    b = $("#examination_total_no_of_question").val();
+    c = ( a * b )/60;
+
+    $("#examination_total_time_for_exam").val(c);
+
+  var q;
+  var r;
+      q = $("#examination_mark_per_question").val();
+
+      r = b * q;
+
+      $("#examination_total_marks_of_question").val(r);
+    });
+</script>

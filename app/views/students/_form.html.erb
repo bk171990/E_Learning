@@ -1,4 +1,3 @@
-<div class="row-fluid">
     <div class="span12">
       <div class="widget-box">
         <div class="widget-title">
@@ -18,145 +17,151 @@
               </ul>
             </div>
         <% end %>
-        <div class="control-group">
-              <label class="control-label">Student Full Name :</label>
-              <div class="controls">
-              <%= form.text_field :name, class: "span11",autofocus: true, placeholder:"Full Name" %>
-              </div>
-            
-              <div class="control-group">
-              <label class="control-label">Student Phone :</label>
-              <div class="controls">
-              <%= form.text_field :phone_number, class: "span11",autofocus: true, placeholder:"Phone Number" %>
-              </div>
-            </div>
-              <div class="control-group">
-              <label class="control-label">Student Email :</label>
-              <div class="controls">
-              <%= form.text_field :email, class: "span11",autofocus: true, placeholder:"Student Email" %>
-              </div>
-            </div>
-              <div class="control-group">
-              <label class="control-label">Student Password :</label>
-              <div class="controls">
-              <%= form.text_field :password, class: "span11",autofocus: true, placeholder:"Student password" %>
-              </div>
-            </div>
-             <!--               
-              <div class="section">
-                <label class="input"> <!-- <i class="icon-append fa fa-lock"></i> -->
-                <%#= form.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password" %>
-                <!--   <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label> -->
-              <!-- </div> -->
-            <!-- </fieldset> -->
-              
-               <div class="control-group">
-              <label class="control-label">Select Course :</label>
-              <div class="controls">
-                  <%= form.select :course_id, Course.all.collect{|course| [course.course_name, course.id]},{prompt:true}, class: 'span11'%>
 
-                  </div>
-                </div>
-
-                <div class="control-group">
-              <label class="control-label">Date Of Birth :</label>
-              <div class="controls">
-                  <%= form.date_select :dob,autofocus: true, placeholder:"Date Of Birth" %>
-                  </div>
-                </div>
-
-                <div class="control-group">
-              <label class="control-label">Student Address :</label>
-              <div class="controls">
-                  <%= form.text_field :address, class: "span11",autofocus: true, placeholder:"Address" %>
-                  </div>
-                </div>
-
-                <div class="control-group">
-              <label class="control-label">Nearest Landmark :</label>
-              <div class="controls">
-                  <%= form.text_field :landmark, class: "span11",autofocus: true, placeholder:"Landmark" %>
-                  </div>
-                </div>
-
-              <div class="control-group">
-              <label class="control-label">City :</label>
-              <div class="controls">
-                  <%= form.text_field :city, class: "span11",autofocus: true, placeholder:"City" %>
-                  </div>
-                </div>
-            
-              <div class="control-group">
-              <label class="control-label">State :</label>
-              <div class="controls">
-                  <%= form.text_field :state, class: "span11",autofocus: true, placeholder:"State" %>
-                  </div>
-                </div>
-              
-              <div class="control-group">
-              <label class="control-label">Country :</label>
-              <div class="controls">
-                  <%=country_select("center", "country", { priority_countries: ["IN", "FR"], selected: "IN" }, { class: 'form-control', data: { attribute: "value" } })%>
-
-                  </div>
-                </div>
-
-                <div class="control-group">
-              <label class="control-label">Pincode :</label>
-              <div class="controls">
-                  <%= form.text_field :pincode, class: "span11",autofocus: true, placeholder:"Pincode" %>
-                  </div>
-                </div>
-                   
-                
-  <!-- <div class="field">
-    <%#= form.label :country %>
-    <%#= text_field :country,:readonly => true%>
-  </div>-->     
-
-                <div class="control-group">
-              <label class="control-label">Referral Code :</label>
-              <div class="controls">
-                  <%= form.text_field :referenced_by, class: "span11",autofocus: true, placeholder:"Referenced_by" %>
-                  </div>
-                </div>
-                
-               
-
-  <!-- <div class="field">
-    <%#= form.label :duration %>
-    <%#= form.time_select :duration, id: :student_duration %>
-  </div> -->
-
-  <!-- <div class="field">
-    <%#= form.label :phone_number %>
-    <%#= form.text_field :phone_number, id: :student_phone_number %>
+  <div class="control-group">
+    <label class="control-label">Student Full Name :</label>
+  <div class="controls">
+  <%= form.text_field :name, class: "form-control",autofocus: true, placeholder:"Full Name" %>
   </div>
 
-  <!-- <div class="field">
-    <%#= form.label :image %>
-    <%#= form.text_field :image, id: :student_image %>
-  </div> -->
+        <div class="control-group">
+          <label class="control-label">Student Phone :</label>
+  <div class="controls">
+  <%= form.text_field :phone_number, class: "form-control",autofocus: true, placeholder:"Phone Number" %>
+  </div>
+</div>
+        <div class="control-group">
+          <label class="control-label">Student Email :</label>
+  <div class="controls">
+  <%= form.text_field :email, class: "form-control",autofocus: true, placeholder:"Student Email" %>
+  </div>
+</div>
+        <div class="control-group">
+          <label class="control-label">Student Password :</label>
+  <div class="controls">
+  <%= form.password_field :password, class: "form-control",autofocus: true, placeholder:"Student password" %>
+  </div>
+</div>
+ <!--               
+  <div class="section">
+    <label class="input"> <!-- <i class="icon-append fa fa-lock"></i> -->
+    <%#= form.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password" %>
+    <!--   <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label> -->
+  <!-- </div> -->
+<!-- </fieldset> -->
+  
+         <div class="control-group">
+          <label class="control-label">Select Course :</label>
+  <div class="controls">
+      <%= form.select :course_id, Course.all.collect{|course| [course.course_name, course.id]},{prompt:true}, class: 'form-control'%>
+
+      </div>
+    </div>
+
+          <div class="control-group">
+            <label class="control-label">Date Of Birth :</label>
+  <div class="controls">
+      <%= form.date_select :dob,autofocus: true, placeholder:"Date Of Birth" %>
+      </div>
+    </div>
+
+          <div class="control-group">
+            <label class="control-label">Student Address :</label>
+  <div class="controls">
+      <%= form.text_field :address, class: "form-control",autofocus: true, placeholder:"Address" %>
+      </div>
+    </div>
+
+          <div class="control-group">
+            <label class="control-label">Nearest Landmark :</label>
+  <div class="controls">
+      <%= form.text_field :landmark, class: "form-control",autofocus: true, placeholder:"Landmark" %>
+      </div>
+    </div>
+
+        <div class="control-group">
+          <label class="control-label">City :</label>
+  <div class="controls">
+      <%= form.text_field :city, class: "form-control",autofocus: true, placeholder:"City" %>
+      </div>
+    </div>
+
+        <div class="control-group">
+          <label class="control-label">State :</label>
+  <div class="controls">
+      <%= form.text_field :state, class: "form-control",autofocus: true, placeholder:"State" %>
+      </div>
+    </div>
+  
+        <div class="control-group">
+          <label class="control-label">Country :</label>
+  <div class="controls">
+      <%=country_select("center", "country", { priority_countries: ["IN", "FR"], selected: "IN" }, { class: 'form-control', data: { attribute: "value" } })%>
+
+      </div>
+    </div>
+
+          <div class="control-group">
+            <label class="control-label">Pincode :</label>
+  <div class="controls">
+      <%= form.text_field :pincode, class: "form-control",autofocus: true, placeholder:"Pincode" %>
+      </div>
+    </div>
+       
+    
+<!-- <div class="field">
+<%#= form.label :country %>
+<%#= text_field :country,:readonly => true%>
+</div>-->     
+
+          <div class="control-group">
+            <label class="control-label">Referral Code :</label>
+  <div class="controls">
+      <%= form.text_field :referenced_by, class: "form-control",autofocus: true, placeholder:"Referenced_by" %>
+      </div>
+    </div>
+    
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>
+  
+
+<!-- <div class="field">
+<%#= form.label :duration %>
+<%#= form.time_select :duration, id: :student_duration %>
+</div> -->
+
+<!-- <div class="field">
+<%#= form.label :phone_number %>
+<%#= form.text_field :phone_number, id: :student_phone_number %>
+</div>
+
+<!-- <div class="field">
+<%#= form.label :image %>
+<%#= form.text_field :image, id: :student_image %>
+</div> -->
 <!-- 
-  <div class="field">
-    <%#= form.label :coupon_code %>
-    <%#= form.text_field :coupon_code, id: :student_coupon_code %>
-  </div> --> <!-- 
-                <div class="row">
-                <div class="section col col-6">
-                  <label class="input">
-                  <%#= form.text_field :referral_code, :placeholder => 'Last Name',id: :student_referral_code %>
-                  </label>
-                </div>
-                <div class="section col col-"> -->
-                
-      <div class="form-actions">
+<div class="field">
+<%#= form.label :coupon_code %>
+<%#= form.text_field :coupon_code, id: :student_coupon_code %>
+</div> --> <!-- 
+    <div class="row">
+    <div class="section col col-6">
+      <label class="input">
+      <%#= form.text_field :referral_code, :placeholder => 'Last Name',id: :student_referral_code %>
+      </label>
+    </div>
+    <div class="section col col-"> -->
+    
+<div class="form-actions">
 <!--         <%#= form.submit "Submit", class: "btn btn-success" %>
- -->        <%= form.submit "Create Student", class: "btn btn-primary"%>
-            <%= link_to 'Back', students_path,class: 'btn btn-primary' %>
-            </div>
-        </form>
-    <% end %>
+-->        <%= form.submit "Create Student", class: "btn btn-primary"%>
+<%= link_to 'Back', students_path,class: 'btn btn-primary' %>
+</div>
+</form>
+<% end %>
 
 <script type="text/javascript">
 $(function() {

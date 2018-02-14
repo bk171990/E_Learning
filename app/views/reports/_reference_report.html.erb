@@ -1,0 +1,29 @@
+ <div class="widget-title">
+          <h5>Reports</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+
+<%@references.each do |s|%>
+<p>
+<strong>Name</strong>
+<%=s.firstname%>
+</p>
+<p>
+<strong>Email</strong>
+<%=s.email%>
+</p>
+
+<p>
+<strong>Referenced By</strong>
+<%=s.referenced_by%>
+</p>
+
+<p>
+<strong>Course Name</strong>
+<%=s.course%>
+</p>
+
+
+<%end%>
+

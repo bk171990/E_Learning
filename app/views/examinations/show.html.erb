@@ -1,0 +1,121 @@
+  <%= link_to 'View Questions', show_question_examination_path(@examination),class: "btn btn-warning" %> |
+
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Course Details</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exam name:</strong>
+  <%= @examination.exam_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @examination.description %>
+</p>
+
+<p>
+  <strong>Time for question:</strong>
+  <%= @examination.time_for_question %>
+</p>
+
+<p>
+  <strong>Total no of question:</strong>
+  <%= @examination.total_no_of_question %>
+</p>
+
+<p>
+  <strong>Total time for exam:</strong>
+  <%= @examination.total_time_for_exam %>
+</p>
+
+<p>
+  <strong>Mark per question:</strong>
+  <%= @examination.mark_per_question %>
+</p>
+
+<p>
+  <strong>Total marks of question:</strong>
+  <%= @examination.total_marks_of_question %>
+</p>
+
+<p>
+  <strong>Publish exam time and date:</strong>
+  <%= @examination.publish_exam_time_and_date %>
+</p>
+
+<p>
+  <strong>Exam rules and regulations:</strong>
+  <%= @examination.exam_rules_and_regulations %>
+</p>
+
+<%= link_to 'Edit', edit_examination_path(@examination),class: "btn btn-warning" %> |
+<%= link_to 'Back', examinations_path, class: "btn btn-primary" %> 
+<%#= link_to 'Create Question', new_exam_question_path(@examination.id), class: "btn btn-success" %>
+</div>
+</div>
+</div>
+
+  <hr>
+  <div class="widget-content collapse in" id="collapseG4">
+     <div class="span6">
+      <div class="widget-box">
+       <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+         <h5>Exam Question</h5>
+       </div>
+                 <div class="widget-content collapse in" id="collapseG4">
+
+       
+        <%= form_for [ @examination, @examination.exam_questions.build ] do |form| %>
+          <div class="widget-content nopadding">
+            <div class="control-group">
+             <label class="control-label">Descriptions :</label>
+              <div class="controls">
+                <%= form.text_area :name, placeholder: "Enter Question" %>
+              </div>
+            </div>
+
+               <div class="control-group">
+              <label class="control-label">Option Types :</label>
+              <div class="controls">
+
+    <%=form.select :question_type, options_for_select(['True or False', 'Multiple Choices']),{prompt:true},{class: "form-control"}%>
+          </div>
+
+     
+       <div id = 'question_type'>
+       </div>
+       </div>
+           
+    <p>
+      <%= form.submit 'Submit', class: "btn btn-primary",style:"width:80px"%>
+    </p>
+  <% end %>
+  </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+  $('#exam_question_question_type').on('change', function() {
+    var question_id;
+      Item = $(this).val();
+    $.ajax({
+      url: '/examinations/select_question_type',
+      type: 'GET',
+      dataType: 'script',
+      data: {question_id: Item},
+   }).done(function(data) { 
+
+ });
+});
+</script>
+
+  

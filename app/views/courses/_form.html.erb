@@ -1,5 +1,4 @@
- <div class="row-fluid">
-    <div class="span12">
+    <div class="span10">
       <div class="widget-box">
         <div class="widget-title">
          <span class="icon"> <i class="icon-align-justify"></i> </span>
@@ -20,90 +19,88 @@
     </div>
   <% end %>
 <div class="control-group">
-              <label class="control-label">Course Name :</label>
-              <div class="controls">
-              <%= form.text_field :course_name, class: "span11",id: :course_course_name %>
-              </div>
-              </div>
-<!--          <input type="text" class="span11" placeholder="Enter Name" />
- -->    
-            <div class="control-group">
-              <label class="control-label">Course Description :</label>
-              <div class="controls">
-              <%= form.text_field :course_description,class: "span11",id: :course_course_description %>
-              </div>
-              </div>
-       
-              <div class="control-group">
-              <label class="control-label">Course Validity :</label>
-              <div class="controls">
-              <%= form.date_select :course_validity,value: Date.today,class: "span11", id: :course_course_validity %>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->              </div>
-            </div>
+  <label class="control-label">Course Name :</label>
+    <div class="controls">
+    <%= form.text_field :course_name, class: "form-control",id: :course_course_name %>
+    </div>
+  </div>
+  <!--          <input type="text" class="form-control" placeholder="Enter Name" />
+  -->    
+  <div class="control-group">
+  <label class="control-label">Course Description :</label>
+    <div class="controls">
+    <%= form.text_field :course_description,class: "form-control",id: :course_course_description %>
+    </div>
+  </div>
 
-              <div class="control-group">
-              <label class="control-label">Course Fees :</label>
-              <div class="controls">
-              <%= form.text_field :fees,class: "span11", id: :course_fees %>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->              </div>
-            </div>
+  <div class="control-group">
+  <label class="control-label">Course Validity :</label>
+    <div class="controls">
+    <%= form.date_field :course_validity,value: Date.today,class: "datepicker", id: :course_course_validity ,remote: true%>
 
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  -->              </div>
+  </div>
 
-              <div class="control-group">
-              <label class="control-label">Upload Course Image :</label>
-              <div class="controls">
-              <%=form.file_field :photo, class: "span11"%>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->              </div>
-            </div>
-
-              <div class="control-group">
-              <label class="control-label">Course Status :</label>
-              <div class="controls">
-              <p>
-              <%= form.radio_button :status, 'Active' %> Active <br />
-              <%= form.radio_button :status, 'Inactive' %> Inactive<br />
-                </p>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->              </div>
-            </div>
-
-              <!-- <div class="field">
-              <%#= form.label :status %>
-              <%#= form.text_field :status, id: :course_status %>
-              </div> -->
-              <!-- <div class="control-group">
-              <label class="control-label">Course Batch :</label>
-              <div class="controls">
-              <%#= form.text_field :batch, id: :course_batch %>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->             
-
-              <div class="control-group">
-              <label class="control-label">Admission Start Date :</label>
-              <div class="controls">
-              <%= form.date_select :admission_start_date,class: "span11", id: :course_admission_start_date %>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->              </div>
-            </div>
-
-              <div class="control-group">
-              <label class="control-label">Admission End Date :</label>
-              <div class="controls">
-              <%= form.date_select :admission_end_date,class: "span11", id: :course_admission_end_date %>
-<!--          <input type="text" class="span11" placeholder="Description" />
- -->              </div>
-            </div>
+  <div class="control-group">
+  <label class="control-label">Course Fees :</label>
+    <div class="controls">
+    <%= form.text_field :fees,class: "form-control", id: :course_fees %>
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  -->              </div>
+  </div>
 
 
+  <div class="control-group">
+  <label class="control-label">Upload Course Image :</label>
+  <div class="controls">
+  <%=form.file_field :photo, class: "form-control"%>
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  -->              </div>
+  </div>
 
+  <div class="control-group">
+  <label class="control-label">Course Status :</label>
+    <div class="controls">
+    <p>
+    <%= form.radio_button :status, 'Active' %> Active <br />
+    <%= form.radio_button :status, 'Inactive' %> Inactive<br />
+      </p>
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  --> </div>
+
+
+  <!-- <div class="field">
+  <%#= form.label :status %>
+  <%#= form.text_field :status, id: :course_status %>
+  </div> -->
+  <!-- <div class="control-group">
+  <label class="control-label">Course Batch :</label>
+  <div class="controls">
+  <%#= form.text_field :batch, id: :course_batch %>
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  -->             
+
+  <div class="control-group">
+  <label class="control-label">Admission Start Date :</label>
+    <div class="controls">
+    <%= form.date_field :admission_start_date,class: "datepicker", id: :course_admission_start_date %>
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  -->              </div>
+  </div>
+  <div class="control-group">
+  <label class="control-label">Admission End Date :</label>
+    <div class="controls">
+    <%= form.date_field :admission_end_date,class: "datepicker", id: :course_admission_end_date %>
+  <!--          <input type="text" class="form-control" placeholder="Description" />
+  -->              </div>
+  </div>
   <div class="form-actions">
      <%= form.submit "Create Course" ,class: "btn btn-success"%>
   </div>
 <% end %>
 
-
-
-
+<script type="text/javascript">
+  $('.datepicker').datepicker();
+  $('#datetimepicker1').datetimepicker();
+</script>

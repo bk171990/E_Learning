@@ -27,6 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem "font-awesome-rails"
+gem "nifty-generators", :group => :development
 
 # Using devise gem for create users
 gem 'devise'
@@ -39,8 +40,18 @@ gem 'jquery-ui-rails', '5.0.5'
 gem 'paperclip'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'trix'
+gem 'jquery-rails'
+gem 'js-routes'
+gem 'ckeditor'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'will_paginate', '~> 3.1.0'
 
  gem 'payuindia'
+ # gem 'chartkick', '~> 1.2.4'
+ # gem 'groupdate', '~> 2.1.1'
+ gem 'active_median', '~> 0.1.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -66,3 +77,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mocha', group: :test
