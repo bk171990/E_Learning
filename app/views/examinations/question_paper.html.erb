@@ -1,0 +1,50 @@
+<h2><%=@examination.exam_name%></h2>
+  <div class="span6">
+    <div class="widget-box widget-chat">
+      <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+        <h5>Rules and Regulations</h5>
+      </div>
+      <div class="widget-content collapse in" id="collapseG4" style="min-width: 50px;">
+        <h5><%=@examination.exam_rules_and_regulations %></h5>
+      </div>
+    </div>
+
+    <div class="box col-md-12">
+  <div class="box-inner">
+    <div class="box-header well">
+      <div class="pull-right">
+        <div id="timer" >
+          Exam Remaining Time:
+          <input id="minutes" type="text" readonly="true" style="width: 26px; font-size: 16px; font-weight: bold; background-color:transparent"> min : 
+          <input id="seconds" type="text" readonly="true" style="width: 26px;font-size: 16px; font-weight: bold; background-color:transparent">sec
+            <button id="hello" value="<%=@examination.id%>" class="btn btn-primary">Start Exam</button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+<div id="question_paper"></div>
+ 
+<script type='text/javascript'>
+$('#hello').on('click', function() {
+     var examination_id;
+      Item = $(this).val();
+      var url = location.href.split("?")[1].split("=");
+      alert(url[1]);
+    $.ajax({
+      url: '/examinations/disp_time',
+      type: 'GET',
+      dataType: 'script',
+      data: {examination_id: Item},
+   }).done(function(data) { 
+
+  });
+
+});
+</script>
+
+
+
+

@@ -10,17 +10,23 @@ class User < ApplicationRecord
   scope :shod, ->(id) { where(id: id).take }
   has_many :queries
   belongs_to :student, optional:true
-
+  
 
  def create_general_setting
     role = 'Student'
     role = 'SuperAdmin' if id == 1
-    gs = GeneralSetting.create(name: 'Portal ')
+    gs = GeneralSetting.create(name: 'Portal')
     update(general_setting_id: gs.id, role: role)
   end
 
  def self.current
     Thread.current[:user]
+  end
+
+   def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
   end
 
   # setter for current user

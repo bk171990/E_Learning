@@ -1,16 +1,42 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<html lang="en">
+    
+<head>
+        <title>Login</title><meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/assets/adminbootstrap.min.css" />
+		<link rel="stylesheet" href="/assets/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="/assets//login.css" />
+        <link href="/assets/font-awesome.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    </head>
+    <body>
+        <div id="loginbox">            
+				 <div class="control-group normal_text"> <h3><img src="/assets/logo.png"></h3></div>
+					<div class="control-group">
+                    <div class="controls">
+                        <div class="main_input_box">
+                        		<h4>Enter your e-mail address below and we will send you instructions how to recover a password.</h4>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+						                      
+						<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  						<%= devise_error_messages! %>
+						<div class="field">
+						<span class="add-on bg_lo"><i class="icon-envelope"></i></span><%= f.email_field :email, autofocus: true %>
+  						</div>
+  						</div>
+					<div class="actions">
 
-<%= render "devise/shared/links" %>
+					<div class="form-actions">
+                    <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
+					<span class="pull-right">
+    			<%= f.submit "Recover Password", class: "btn btn-info" %></span>
+  					<% end %>
+</div>
+        </div>
+        <script src="/assets/jquery.min.js"></script>  
+        <script src="/assets/login.js"></script> 
+    </body>
+
+</html>

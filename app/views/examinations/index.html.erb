@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<h1>Examinations</h1>
+
+
+<%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin'%>
+   <%= link_to 'New Examination', new_examination_path, class: "btn btn-primary" %>
+   <% end %>
+<div class="container-fluid">
+  <hr>
+
+
+
+<div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+
+      <th>Exam name</th>
+      <!-- <th>Description</th> -->
+      <th>Time for question</th>
+      <th>Total no of question</th>
+      <th>Total time for exam</th>
+      <th>Mark per question</th>
+      <th>Total marks of question</th>
+      <!-- <th>Publish exam time and date</th> -->
+<!--       <th>Exam rules and regulations</th>
+ -->      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @examinations.each do |examination| %>
+      <tr>
+        <td><%= examination.exam_name %></td>
+<!--         <td><%= examination.description %></td>
+ -->    <td><%= examination.time_for_question %></td>
+        <td><%= examination.total_no_of_question %></td>
+        <td><%= examination.total_time_for_exam %> min</td>
+        <td><%= examination.mark_per_question %></td>
+        <td><%= examination.total_marks_of_question %></td>
+<!--         <td><%= examination.publish_exam_time_and_date %></td>
+ --><!-- <td><%= examination.exam_rules_and_regulations %></td> -->
+
+        <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin'%>
+
+          <td><%= link_to 'Show', examination, class: "btn btn-success" %></td>
+          <td><%= link_to 'Edit', edit_examination_path(examination), class: "btn btn-warning" %></td>
+          <td><%= link_to 'Destroy', examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          <%elsif current_user.role == 'Student' %>
+          <td><%=  link_to 'Apply',question_paper_examinations_path(id: examination.id), class: "btn btn-success" %></td>
+          </tr>
+          <%end%>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+
+
+<%= will_paginate @examinations %>

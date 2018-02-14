@@ -54,14 +54,14 @@ hr{ border-top-color:#dadada;}
 	z-index: -9;
 }
 #header h1 {
-	background: url("logo.png") no-repeat scroll 0 0 transparent;
-	height: 31px;
-	left: 20px;
-	line-height: 600px;
+	background: url("ADminLOGO.png") no-repeat scroll 0 0 transparent;
+	height: 101px;
+	left: 00px;
+	line-height: 200px;
 	overflow: hidden;
 	position: relative;
-	top: 26px;
-	width: 191px;
+	top: 10px;
+	width: px;
 }
 #header h1 a {
 	display: block;
@@ -536,7 +536,7 @@ hr{ border-top-color:#dadada;}
 	margin-bottom: 0;
 }
 .widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header {
-	 background:#efefef;
+	 background:#92CFF7;
 	border-bottom: 1px solid #CDCDCD;
 	height: 36px;  
 }

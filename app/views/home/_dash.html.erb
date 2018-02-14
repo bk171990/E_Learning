@@ -61,6 +61,8 @@
             <%end%>
             <li><a href="/courses/student_courses"><i class="icon icon-book"></i> <span>Courses</span></a></li>
             <li><a href="/queries"><i class="icon icon-book"></i> <span>Query</span></a></li>
+            <li><a href="/examinations"><i class="icon icon-book"></i><span>Examination</span></a></li>
+
             
 
            <%end%>
@@ -71,9 +73,11 @@
     
 
       <%if current_user.role == 'SuperAdmin' || current_user.role == 'Admin'%>
-        <li><a href="/students"><i class="icon-user-md"></i> <span>Admission</span></a></li>
+<!--       <li><a href="/exam_questions"><i class="icon icon-file"></i> <span>Exams</span></a>
+ -->        <li><a href="/students"><i class="icon-user-md"></i> <span>Admission</span></a></li>
         <li><a href="/reports/report"><i class="icon-user-md"></i> <span>Reports</span></a></li>
         <li><a href="/queries"><i class="icon icon-book"></i> <span>Students Questions</span></a></li>
+        <li><a href="/examinations"><i class="icon icon-book"></i><span>Examination</span></a></li>
 
       <%end%>
 

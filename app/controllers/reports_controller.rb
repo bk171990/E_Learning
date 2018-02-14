@@ -12,4 +12,13 @@ class ReportsController < ApplicationController
         @payments = Payment.all
       end
     end
+
+    def reference_report
+      @students = Student.reference_report
+    end
+
+    def select_reference
+      @student = Student.load(params[:student_id])
+      @references = @student.users
+    end
 end

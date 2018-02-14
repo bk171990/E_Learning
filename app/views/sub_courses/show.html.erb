@@ -1,0 +1,21 @@
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Sub Course Details</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Sub Course Name:</strong>
+  <%= @sub_course.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @sub_course.course %>
+</p>
+
+<%= link_to 'Edit', edit_sub_course_path(@sub_course), class: "btn btn-success" %> |
+<%= link_to 'Back', sub_courses_path, class: "btn btn-primary"  %>

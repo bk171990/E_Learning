@@ -1,0 +1,20 @@
+
+<div class="span6">
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Result</h5>
+          </div>
+          <div class="widget-content collapse in" id="collapseG4">
+<!--            <b>your total score is : <%= @score[1] %> out of <%=@examination.total_no_of_question%></b></div>
+ -->           
+        <% @score[0].each do |s|%>
+                <b>your total score is : <%= s[1] %> </b>
+                <p><b>your <%= s[0]%> score is : <%= '%.2f'%(s[1])%></b></p>
+                <%Result.create(name:s[0],percentage:s[1])%>
+              <%end%>
+          <%=link_to 'Finish',dashboard_home_index_path,class: "btn btn-primary" %>
+           </div><br>
+          </div>
+        </div>
+           
+

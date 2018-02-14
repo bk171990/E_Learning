@@ -1,0 +1,38 @@
+ <div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title">
+         <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Reports</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <div class="form-horizontal"">
+<%= form_for :student do |f|%>
+ 
+<div class="control-group">
+              <label class="control-label">Select:</label>
+              <div class="controls">
+ <%= f.select :student_id,@students.collect{|s| [s.referenced_by, s.id]},{prompt:true},id: 'student_id',class: 'form-control'%>
+              </div>
+              </div>
+         
+<% end %>
+ 
+  
+<div id="reference">
+</div>
+ 
+<script type='text/javascript'>
+$('#student_id').on('change', function() {
+ 			var student_id;
+ 			Item = $('#student_id').val();
+  	$.ajax({
+   		url: '/reports/select_reference',
+   		type: 'GET',
+   		dataType: 'script',
+   		data: {student_id: Item},
+   }).done(function(data) { 
+
+ });
+});
+</script>

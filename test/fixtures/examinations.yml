@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exam_name: MyString
+  description: MyString
+  time_for_question: 2018-01-15 15:10:48
+  total_no_of_question: MyString
+  total_time_for_exam: MyString
+  mark_per_question: MyString
+  total_marks_of_question: MyString
+  publish_exam_time_and_date: MyString
+  exam_rules_and_regulations: MyString
+
+two:
+  exam_name: MyString
+  description: MyString
+  time_for_question: 2018-01-15 15:10:48
+  total_no_of_question: MyString
+  total_time_for_exam: MyString
+  mark_per_question: MyString
+  total_marks_of_question: MyString
+  publish_exam_time_and_date: MyString
+  exam_rules_and_regulations: MyString
